@@ -1,0 +1,11 @@
+- id: project-1
+  title: "Procedural Level Generator"
+  description: "A tool for generating roguelike dungeon layouts."
+  tech:
+    - TypeScript
+    - YAML
+  github: "https://github.com/itzhakrees/itzhakrees.github.io"
+  demo: "https://itzhakrees.github.io"
+  featured: true
+  date: 2026-03-01
+

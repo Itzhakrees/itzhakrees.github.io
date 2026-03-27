@@ -1,0 +1,153 @@
+.page {
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.container {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 48px 16px 56px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.title {
+  font-size: 28px;
+  line-height: 36px;
+  letter-spacing: -0.02em;
+  font-weight: 650;
+}
+
+.subtitle {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.section {
+  padding-top: 24px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.card {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  background: var(--panel);
+  transition: transform 120ms ease, border-color 120ms ease;
+  animation: fadeIn 180ms ease-out both;
+}
+
+.card:hover {
+  transform: scale(1.01);
+  border-color: color-mix(in srgb, var(--accent) 40%, var(--border));
+}
+
+.cardHeader {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.cardTitle {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
+}
+
+.featured {
+  font-size: 12px;
+  line-height: 16px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  color: var(--muted);
+}
+
+.cardDesc {
+  margin-top: 8px;
+  font-size: 14px;
+  line-height: 22px;
+  color: var(--muted);
+}
+
+.techRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.techBadge {
+  font-size: 12px;
+  line-height: 16px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--accent) 10%, var(--panel));
+  border: 1px solid color-mix(in srgb, var(--accent) 25%, var(--border));
+  color: var(--text);
+}
+
+.links {
+  display: flex;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.link {
+  font-size: 13px;
+  line-height: 18px;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.footer {
+  margin-top: 32px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.footerText {
+  color: inherit;
+}
+
+@media (min-width: 760px) {
+  .container {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
