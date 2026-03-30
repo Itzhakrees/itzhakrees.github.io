@@ -7,8 +7,26 @@ type Props = {
 };
 
 export default function ProjectCard({ project }: Props) {
+  const thumbnailSrc = project.thumbnail ? `/img/${project.thumbnail}` : undefined;
+
   return (
     <article className={styles.card}>
+      <div className={styles.thumbnailWrap} aria-label="Project thumbnail">
+        {thumbnailSrc ? (
+          <img
+            className={styles.thumbnail}
+            src={thumbnailSrc}
+            alt={project.title}
+            width={800}
+            height={600}
+            loading="lazy"
+            decoding="async"
+          />
+        ) : (
+          <div className={styles.thumbnailPlaceholder} aria-hidden="true" />
+        )}
+      </div>
+
       <div className={styles.cardHeader}>
         <h3 className={styles.cardTitle}>{project.title}</h3>
         {project.featured ? <span className={styles.featured}>Featured</span> : null}

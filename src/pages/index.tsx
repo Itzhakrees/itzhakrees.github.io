@@ -3,22 +3,22 @@ import type { GetStaticProps } from "next";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import ProjectCard from "@/components/ProjectCard";
-import { getProjects, type Project } from "@/lib/parser";
+import { getProjectSections, type ProjectSection } from "@/lib/parser";
 import styles from "@/styles/Portfolio.module.css";
 
 type Props = {
-  projects: Project[];
+  sections: ProjectSection[];
 };
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
   return {
     props: {
-      projects: getProjects(),
+      sections: getProjectSections(),
     },
   };
 };
 
-export default function Home({ projects }: Props) {
+export default function Home({ sections }: Props) {
   return (
     <>
       <Head>
@@ -31,13 +31,18 @@ export default function Home({ projects }: Props) {
         <main className={styles.container}>
           <Header title="Projects" subtitle="SSG + YAML (single source of truth)" />
 
-          <section className={styles.section} aria-label="Project list">
-            <div className={styles.grid}>
-              {projects.map((p) => (
-                <ProjectCard key={p.id} project={p} />
-              ))}
-            </div>
-          </section>
+          <div className={styles.section} aria-label="Project list">
+            {sections.map((section) => (
+              <section key={section.category} className={styles.categorySection} aria-label={section.category}>
+                <h2 className={styles.categoryTitle}>{section.category}</h2>
+                <div className={styles.grid}>
+                  {section.projects.map((p) => (
+                    <ProjectCard key={p.id} project={p} />
+                  ))}
+                </div>
+              </section>
+            ))}
+          </div>
 
           <Footer />
         </main>
