@@ -1,40 +1,38 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# AI-Driven GitHub Portfolio System
 
-## Getting Started
+一个基于 YAML 数据驱动的个人作品集网站。通过维护 `data/projects.yml`，即可在构建期自动生成项目分区与卡片展示页面。
 
-First, run the development server:
+## 项目简介
+
+- 数据源：`data/projects.yml`（单一数据源）
+- 渲染方式：Next.js SSG（静态生成）
+- 展示能力：按 `category` 分区、按 `featured/date` 排序、卡片展示 `thumbnail/tech/github/demo`
+- 图片资源：`public/img/`
+
+## 使用技术栈
+
+- Next.js 16（Pages Router）
+- React
+- TypeScript（严格模式）
+- Node.js 18+
+- YAML（`js-yaml` 解析）
+- CSS Modules
+
+## 全 AI 生成说明
+
+本项目当前版本为**全 AI 生成与迭代**，包括需求拆解、实现、测试与文档整理。
+
+## 生成所用 Plan 文档路径
+
+- `Plan.md`
+- `.trae/documents/ReqPlan0.1.md`
+- `.trae/documents/ReqPlan0.2.md`
+
+## 本地运行
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm.cmd install
+npm.cmd run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+打开 [http://localhost:3000](http://localhost:3000) 进行预览。
