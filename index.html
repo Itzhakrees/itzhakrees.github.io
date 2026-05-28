@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Game systems, gameplay, and level design portfolio for Itzhak Rees."
+    />
+    <title>Itzhak Rees | Game Systems & Level Designer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/utilities.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main" data-i18n="skipLink">Skip to main content</a>
+
+    <header class="site-header">
+      <nav class="nav container" aria-label="Primary navigation">
+        <a class="brand" href="#top" aria-label="Itzhak Rees portfolio home">
+          <span class="brand-mark">IR</span>
+          <span class="brand-text">Itzhak Rees</span>
+        </a>
+
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="primary-menu"
+          aria-label="Open navigation"
+          data-i18n-aria-label="navOpen"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <div class="nav-menu" id="primary-menu">
+          <a href="#projects" data-i18n="navProjects">Projects</a>
+          <a href="#research" data-i18n="navResearch">Research</a>
+          <a href="#skills" data-i18n="navSkills">Skills</a>
+          <a href="#about" data-i18n="navAbout">About</a>
+          <a href="#contact" data-i18n="navContact">Contact</a>
+          <a class="nav-resume" href="#contact" data-i18n="navResume">Resume</a>
+          <button class="language-toggle" type="button" data-language-toggle aria-pressed="false">
+            中文
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero section" id="top">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow" data-i18n="heroEyebrow">Portfolio for game design roles</p>
+            <h1 data-i18n="heroTitle">Game Systems & Level Designer</h1>
+            <p class="hero-lede" data-i18n="heroLede">
+              I design readable systems, expressive mechanics, and levels that make player
+              choices feel intentional from the first minute.
+            </p>
+            <div class="hero-actions">
+              <a class="btn primary" href="#projects" data-i18n="heroProjects">View projects</a>
+              <a class="btn secondary" href="#contact" data-i18n="heroContact">Contact me</a>
+            </div>
+          </div>
+
+          <aside class="hero-panel" aria-label="Portfolio snapshot" data-i18n-aria-label="heroPanelLabel">
+            <div class="snapshot-row">
+              <span data-i18n="snapshotFocusLabel">Focus</span>
+              <strong data-i18n="snapshotFocus">Gameplay systems + level flow</strong>
+            </div>
+            <div class="snapshot-row">
+              <span data-i18n="snapshotMethodsLabel">Methods</span>
+              <strong data-i18n="snapshotMethods">Prototype, playtest, iterate</strong>
+            </div>
+            <div class="snapshot-row">
+              <span data-i18n="snapshotLookingLabel">Seeking</span>
+              <strong data-i18n="snapshotLooking">Systems, gameplay, or level design</strong>
+            </div>
+            <div class="snapshot-tags" aria-label="Design strengths" data-i18n-aria-label="snapshotTagsLabel">
+              <span data-i18n="tagBalance">Balance</span>
+              <span data-i18n="tagPacing">Pacing</span>
+              <span data-i18n="tagFeedback">Feedback loops</span>
+              <span data-i18n="tagDocs">Design docs</span>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section projects-section" id="projects">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow" data-i18n="projectsEyebrow">Featured work</p>
+            <h2 data-i18n="projectsTitle">Game projects</h2>
+            <p data-i18n="projectsIntro">
+              Placeholder case studies structured for recruiters and design leads: role, design
+              problem, playable decisions, deliverables, and lessons learned.
+            </p>
+          </div>
+
+          <div class="project-grid">
+            <article class="project-card">
+              <div class="project-media systems-media" aria-hidden="true">
+                <span data-i18n="projectOneMedia">Systems prototype media</span>
+              </div>
+              <div class="project-body">
+                <div class="project-kicker">
+                  <span data-i18n="projectOneRole">Gameplay / systems design</span>
+                  <span data-i18n="projectOneEngine">Unity prototype</span>
+                </div>
+                <h3 data-i18n="projectOneTitle">Combat Loop Prototype</h3>
+                <p data-i18n="projectOneSummary">
+                  A placeholder project focused on core combat rhythm, risk-reward tuning, and
+                  readable player feedback.
+                </p>
+                <dl class="project-meta">
+                  <div>
+                    <dt data-i18n="metaGenre">Genre</dt>
+                    <dd data-i18n="projectOneGenre">Action adventure</dd>
+                  </div>
+                  <div>
+                    <dt data-i18n="metaTeam">Team</dt>
+                    <dd data-i18n="projectOneTeam">Solo / small team</dd>
+                  </div>
+                  <div>
+                    <dt data-i18n="metaDuration">Duration</dt>
+                    <dd data-i18n="projectOneDuration">6 weeks</dd>
+                  </div>
+                </dl>
+                <ul class="project-points">
+                  <li data-i18n="projectOnePointA">Designed attack, recovery, enemy pressure, and reward timing.</li>
+                  <li data-i18n="projectOnePointB">Prepared balance sheets and playtest notes for iteration.</li>
+                  <li data-i18n="projectOnePointC">Outcome placeholder: clearer decision windows and stronger feedback.</li>
+                </ul>
+                <a class="text-link" href="#contact" data-i18n="projectLinkPlaceholder">Case study coming soon</a>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-media level-media" aria-hidden="true">
+                <span data-i18n="projectTwoMedia">Level design media</span>
+              </div>
+              <div class="project-body">
+                <div class="project-kicker">
+                  <span data-i18n="projectTwoRole">Level design</span>
+                  <span data-i18n="projectTwoEngine">Greybox + blockout</span>
+                </div>
+                <h3 data-i18n="projectTwoTitle">Traversal Level Case Study</h3>
+                <p data-i18n="projectTwoSummary">
+                  A placeholder level study built around route readability, pacing contrast, and
+                  encounter staging.
+                </p>
+                <dl class="project-meta">
+                  <div>
+                    <dt data-i18n="metaGenre">Genre</dt>
+                    <dd data-i18n="projectTwoGenre">Third-person exploration</dd>
+                  </div>
+                  <div>
+                    <dt data-i18n="metaTeam">Team</dt>
+                    <dd data-i18n="projectTwoTeam">Solo designer</dd>
+                  </div>
+                  <div>
+                    <dt data-i18n="metaDuration">Duration</dt>
+                    <dd data-i18n="projectTwoDuration">4 weeks</dd>
+                  </div>
+                </dl>
+                <ul class="project-points">
+                  <li data-i18n="projectTwoPointA">Mapped critical path, optional rewards, sightlines, and gates.</li>
+                  <li data-i18n="projectTwoPointB">Used paper maps and greybox passes to test player flow.</li>
+                  <li data-i18n="projectTwoPointC">Outcome placeholder: smoother onboarding and stronger spatial memory.</li>
+                </ul>
+                <a class="text-link" href="#contact" data-i18n="projectLinkPlaceholder">Case study coming soon</a>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-media jam-media" aria-hidden="true">
+                <span data-i18n="projectThreeMedia">Experimental game media</span>
+              </div>
+              <div class="project-body">
+                <div class="project-kicker">
+                  <span data-i18n="projectThreeRole">Game jam / experimental design</span>
+                  <span data-i18n="projectThreeEngine">Prototype build</span>
+                </div>
+                <h3 data-i18n="projectThreeTitle">Constraint-Based Puzzle Prototype</h3>
+                <p data-i18n="projectThreeSummary">
+                  A placeholder project showing fast ideation, theme interpretation, and compact
+                  mechanic teaching.
+                </p>
+                <dl class="project-meta">
+                  <div>
+                    <dt data-i18n="metaGenre">Genre</dt>
+                    <dd data-i18n="projectThreeGenre">Puzzle / strategy</dd>
+                  </div>
+                  <div>
+                    <dt data-i18n="metaTeam">Team</dt>
+                    <dd data-i18n="projectThreeTeam">3-person team</dd>
+                  </div>
+                  <div>
+                    <dt data-i18n="metaDuration">Duration</dt>
+                    <dd data-i18n="projectThreeDuration">72 hours</dd>
+                  </div>
+                </dl>
+                <ul class="project-points">
+                  <li data-i18n="projectThreePointA">Defined core rule set, tutorial beats, and difficulty ramp.</li>
+                  <li data-i18n="projectThreePointB">Scoped mechanics around production limits and quick playtests.</li>
+                  <li data-i18n="projectThreePointC">Outcome placeholder: compact player learning curve under time pressure.</li>
+                </ul>
+                <a class="text-link" href="#contact" data-i18n="projectLinkPlaceholder">Case study coming soon</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section research-section" id="research">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow" data-i18n="researchEyebrow">Research</p>
+            <h2 data-i18n="researchTitle">Thesis research</h2>
+            <p data-i18n="researchIntro">
+              Research is presented as design evidence: how I frame questions, evaluate player
+              experience, and translate findings into practical design choices.
+            </p>
+          </div>
+
+          <article class="research-card">
+            <div class="research-main">
+              <p class="research-label" data-i18n="researchLabel">Thesis placeholder</p>
+              <h3 data-i18n="researchCardTitle">Player Motivation and Feedback in Interactive Systems</h3>
+              <p data-i18n="researchSummary">
+                A compact summary placeholder for the final thesis topic, connecting academic
+                research to systems, progression, and player-facing feedback.
+              </p>
+            </div>
+            <div class="research-details">
+              <div>
+                <h4 data-i18n="researchQuestionLabel">Question</h4>
+                <p data-i18n="researchQuestion">How do feedback structures influence player motivation and decision-making?</p>
+              </div>
+              <div>
+                <h4 data-i18n="researchMethodsLabel">Methods</h4>
+                <p data-i18n="researchMethods">Literature review, comparative analysis, playtest observation.</p>
+              </div>
+              <div>
+                <h4 data-i18n="researchFindingsLabel">Design relevance</h4>
+                <p data-i18n="researchFindings">Turns research findings into rules for onboarding, reward timing, and readable systems.</p>
+              </div>
+              <a class="btn secondary compact" href="#contact" data-i18n="researchPdf">PDF placeholder</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section skills-section" id="skills">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow" data-i18n="skillsEyebrow">Design toolkit</p>
+            <h2 data-i18n="skillsTitle">Skills and tools</h2>
+          </div>
+
+          <div class="skills-grid">
+            <div class="skill-block">
+              <h3 data-i18n="skillsSystemsTitle">Systems & gameplay</h3>
+              <p data-i18n="skillsSystemsText">Core loops, progression, economy balancing, mechanic documentation, playtest iteration.</p>
+            </div>
+            <div class="skill-block">
+              <h3 data-i18n="skillsLevelTitle">Level design</h3>
+              <p data-i18n="skillsLevelText">Layout flow, encounter pacing, greyboxing, signposting, player path analysis.</p>
+            </div>
+            <div class="skill-block">
+              <h3 data-i18n="skillsResearchTitle">Research & communication</h3>
+              <p data-i18n="skillsResearchText">Research synthesis, player observation, design briefs, presentation decks, team critique.</p>
+            </div>
+            <div class="skill-block">
+              <h3 data-i18n="skillsToolsTitle">Tools</h3>
+              <p data-i18n="skillsToolsText">Unity, Unreal, Figma, Miro, spreadsheets, Git, documentation workflows.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section about-section" id="about">
+        <div class="container about-grid">
+          <div>
+            <p class="eyebrow" data-i18n="aboutEyebrow">About</p>
+            <h2 data-i18n="aboutTitle">Designing for clarity, agency, and iteration</h2>
+          </div>
+          <div class="about-copy">
+            <p data-i18n="aboutTextA">
+              I am building a portfolio for game design roles with a focus on systems, gameplay,
+              and level design. My work emphasizes clear player goals, meaningful tradeoffs, and
+              evidence from testing.
+            </p>
+            <p data-i18n="aboutTextB">
+              This first version uses placeholders so the structure is ready for real screenshots,
+              videos, design documents, thesis material, and downloadable resume files.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section contact-section" id="contact">
+        <div class="container contact-panel">
+          <div>
+            <p class="eyebrow" data-i18n="contactEyebrow">Contact</p>
+            <h2 data-i18n="contactTitle">Let’s talk about game design roles.</h2>
+            <p data-i18n="contactText">
+              Replace these placeholders with your preferred email, LinkedIn, resume, and playable
+              project links.
+            </p>
+          </div>
+          <div class="contact-links">
+            <a class="btn primary" href="mailto:your.email@example.com" data-i18n="contactEmail">Email</a>
+            <a class="btn secondary" href="https://www.linkedin.com/" data-i18n="contactLinkedin">LinkedIn</a>
+            <a class="btn secondary" href="#contact" data-i18n="contactResume">Resume</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p data-i18n="footerCopyright">© 2026 Itzhak Rees. Game design portfolio.</p>
+        <p data-i18n="footerCredit">Static portfolio adapted from an MIT-licensed HTML portfolio template structure.</p>
+      </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
