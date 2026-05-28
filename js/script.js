@@ -19,49 +19,14 @@ const translations = {
     projectsTitle: "Project",
     projectsIntro:
       "Compact case-study placeholders for design leads: what the project is, what I owned, and where the full breakdown will live.",
-    projectOneAria: "Combat Loop Prototype case study",
-    projectOneRole: "Gameplay / systems design",
-    projectOneTitle: "Combat Loop Prototype",
-    projectOneSummary:
-      "Core combat rhythm prototype focused on risk-reward tuning and readable feedback.",
-    projectTwoAria: "Traversal Level Case Study",
-    projectTwoRole: "Level design",
-    projectTwoTitle: "Traversal Level Case Study",
-    projectTwoSummary:
-      "Greybox study for route readability, pacing contrast, and encounter staging.",
-    projectThreeAria: "Constraint-Based Puzzle Prototype",
-    projectThreeRole: "Game jam / experimental design",
-    projectThreeTitle: "Constraint-Based Puzzle Prototype",
-    projectThreeSummary:
-      "Fast prototype showing theme interpretation, compact teaching, and difficulty ramp.",
-    projectLinkPlaceholder: "Case study placeholder",
     researchEyebrow: "Research",
     researchTitle: "Thesis research",
     researchIntro:
       "Research is presented as design evidence: how I frame questions, evaluate player experience, and translate findings into practical design choices.",
-    researchLabel: "Thesis placeholder",
-    researchCardTitle: "Player Motivation and Feedback in Interactive Systems",
-    researchSummary:
-      "A compact summary placeholder connecting academic research to systems, progression, and player-facing feedback.",
-    researchQuestionLabel: "Question",
-    researchQuestion: "How do feedback structures influence player motivation and decision-making?",
-    researchMethodsLabel: "Methods / design link",
-    researchMethods: "Literature review, comparative analysis, playtest observation.",
-    researchPdf: "PDF placeholder",
     docsEyebrow: "Documentation",
     docsTitle: "Design Docs",
     docsIntro:
       "Placeholder documents for the way I communicate systems, levels, balance, and production-ready design intent.",
-    docOneType: "GDD",
-    docOneTitle: "Game Design Document",
-    docOneSummary: "Core pillars, mechanics, loops, and player goals.",
-    docTwoType: "Level notes",
-    docTwoTitle: "Level Blockout Notes",
-    docTwoSummary: "Route plans, gates, sightlines, and encounter pacing.",
-    docThreeType: "System specs",
-    docThreeTitle: "Balance Sheet / System Specs",
-    docThreeSummary: "Variables, tuning notes, test cases, and design rationale.",
-    docLink: "Document placeholder",
     footerCopyright: "© 2026 Itzhak Rees. Game design portfolio.",
     footerCredit: "Static portfolio adapted from an MIT-licensed HTML portfolio template structure.",
   },
@@ -85,45 +50,13 @@ const translations = {
     projectsTitle: "项目",
     projectsIntro:
       "为设计负责人准备的紧凑案例占位：项目是什么、我负责什么，以及后续完整拆解的位置。",
-    projectOneAria: "战斗循环原型案例",
-    projectOneRole: "玩法 / 系统设计",
-    projectOneTitle: "战斗循环原型",
-    projectOneSummary: "围绕核心战斗节奏、风险回报调校和清晰反馈建立的原型。",
-    projectTwoAria: "移动探索关卡案例",
-    projectTwoRole: "关卡设计",
-    projectTwoTitle: "移动探索关卡案例",
-    projectTwoSummary: "关注路线可读性、节奏对比和遭遇编排的灰盒研究。",
-    projectThreeAria: "约束型解谜原型案例",
-    projectThreeRole: "Game Jam / 实验设计",
-    projectThreeTitle: "约束型解谜原型",
-    projectThreeSummary: "展示快速构思、主题转译、紧凑教学和难度曲线的原型。",
-    projectLinkPlaceholder: "案例占位",
     researchEyebrow: "研究",
     researchTitle: "论文研究",
     researchIntro:
       "研究部分作为设计证据呈现：如何提出问题、评估玩家体验，并把发现转化为可执行的设计选择。",
-    researchLabel: "论文占位",
-    researchCardTitle: "互动系统中的玩家动机与反馈",
-    researchSummary:
-      "用于连接学术研究、系统设计、成长节奏和玩家反馈的论文摘要占位。",
-    researchQuestionLabel: "问题",
-    researchQuestion: "反馈结构如何影响玩家动机和决策？",
-    researchMethodsLabel: "方法 / 设计关联",
-    researchMethods: "文献综述、比较分析、playtest 观察。",
-    researchPdf: "PDF 占位",
     docsEyebrow: "文档",
     docsTitle: "设计文档",
     docsIntro: "展示我如何沟通系统、关卡、平衡和可落地设计意图的文档占位。",
-    docOneType: "GDD",
-    docOneTitle: "游戏设计文档",
-    docOneSummary: "核心支柱、机制、循环和玩家目标。",
-    docTwoType: "关卡笔记",
-    docTwoTitle: "关卡 Blockout 笔记",
-    docTwoSummary: "路线规划、门槛、视线和遭遇节奏。",
-    docThreeType: "系统规格",
-    docThreeTitle: "平衡表 / 系统规格",
-    docThreeSummary: "变量、调校笔记、测试用例和设计理由。",
-    docLink: "文档占位",
     footerCopyright: "© 2026 Itzhak Rees。游戏设计作品集。",
     footerCredit: "静态作品集结构改编自 MIT 许可的 HTML portfolio 模板。",
   },
@@ -134,11 +67,118 @@ const navToggle = document.querySelector(".nav-toggle");
 const navMenu = document.querySelector(".nav-menu");
 const translatableNodes = document.querySelectorAll("[data-i18n]");
 const ariaTranslatableNodes = document.querySelectorAll("[data-i18n-aria-label]");
+const projectGrid = document.querySelector("[data-projects]");
+const researchMount = document.querySelector("[data-research]");
+const docsGrid = document.querySelector("[data-design-docs]");
 
 let currentLanguage = localStorage.getItem("portfolioLanguage") || "en";
 
+function getLocalizedContent(item, language) {
+  return item[language] || item.en;
+}
+
+function createTextElement(tagName, className, text) {
+  const element = document.createElement(tagName);
+  if (className) {
+    element.className = className;
+  }
+  element.textContent = text;
+  return element;
+}
+
+function renderProjects(language) {
+  if (!projectGrid || !window.portfolioContent) return;
+
+  projectGrid.replaceChildren(
+    ...window.portfolioContent.projects.map((project) => {
+      const content = getLocalizedContent(project, language);
+      const card = document.createElement("a");
+      card.className = ["project-card", project.visualClass].filter(Boolean).join(" ");
+      card.href = project.href;
+      card.setAttribute("aria-label", content.ariaLabel);
+
+      const visual = document.createElement("span");
+      visual.className = "project-visual";
+      visual.setAttribute("aria-hidden", "true");
+
+      const cardContent = document.createElement("span");
+      cardContent.className = "project-content";
+      cardContent.append(
+        createTextElement("span", "project-role", content.role),
+        createTextElement("span", "project-title", content.title),
+        createTextElement("span", "project-summary", content.summary),
+        createTextElement("span", "project-link", content.linkLabel),
+      );
+
+      card.append(visual, cardContent);
+      return card;
+    }),
+  );
+}
+
+function renderResearch(language) {
+  if (!researchMount || !window.portfolioContent) return;
+
+  const research = window.portfolioContent.research;
+  const content = getLocalizedContent(research, language);
+  const article = document.createElement("article");
+  article.className = "research-card";
+
+  const main = document.createElement("div");
+  main.className = "research-main";
+  main.append(
+    createTextElement("p", "research-label", content.label),
+    createTextElement("h3", "", content.title),
+    createTextElement("p", "", content.summary),
+  );
+
+  const details = document.createElement("div");
+  details.className = "research-details";
+
+  const question = document.createElement("div");
+  question.append(createTextElement("h4", "", content.questionLabel), createTextElement("p", "", content.question));
+
+  const methods = document.createElement("div");
+  methods.append(createTextElement("h4", "", content.methodsLabel), createTextElement("p", "", content.methods));
+
+  const link = document.createElement("a");
+  link.className = "text-link";
+  link.href = research.href;
+  link.textContent = content.linkLabel;
+
+  details.append(question, methods, link);
+  article.append(main, details);
+  researchMount.replaceChildren(article);
+}
+
+function renderDesignDocs(language) {
+  if (!docsGrid || !window.portfolioContent) return;
+
+  docsGrid.replaceChildren(
+    ...window.portfolioContent.designDocs.map((doc) => {
+      const content = getLocalizedContent(doc, language);
+      const card = document.createElement("a");
+      card.className = "doc-card";
+      card.href = doc.href;
+      card.append(
+        createTextElement("span", "doc-type", content.type),
+        createTextElement("span", "doc-title", content.title),
+        createTextElement("span", "doc-summary", content.summary),
+        createTextElement("span", "project-link", content.linkLabel),
+      );
+      return card;
+    }),
+  );
+}
+
+function renderPortfolioContent(language) {
+  renderProjects(language);
+  renderResearch(language);
+  renderDesignDocs(language);
+}
+
 function applyLanguage(language) {
-  const dictionary = translations[language];
+  const dictionary = translations[language] || translations.en;
 
   translatableNodes.forEach((node) => {
     const key = node.dataset.i18n;
@@ -164,6 +204,7 @@ function applyLanguage(language) {
   languageToggle.setAttribute("aria-pressed", String(language === "zh"));
   localStorage.setItem("portfolioLanguage", language);
   currentLanguage = language;
+  renderPortfolioContent(language);
 }
 
 languageToggle.addEventListener("click", () => {

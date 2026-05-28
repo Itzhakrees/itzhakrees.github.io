@@ -1,0 +1,135 @@
+window.portfolioContent = {
+  projects: [
+    {
+      id: "combat-loop",
+      visualClass: "systems-card",
+      href: "#",
+      en: {
+        ariaLabel: "Combat Loop Prototype case study",
+        role: "Gameplay / systems design",
+        title: "Combat Loop Prototype",
+        summary: "Core combat rhythm prototype focused on risk-reward tuning and readable feedback.",
+        linkLabel: "Case study placeholder",
+      },
+      zh: {
+        ariaLabel: "战斗循环原型案例",
+        role: "玩法 / 系统设计",
+        title: "战斗循环原型",
+        summary: "围绕核心战斗节奏、风险回报调校和清晰反馈建立的原型。",
+        linkLabel: "案例占位",
+      },
+    },
+    {
+      id: "traversal-level",
+      visualClass: "level-card",
+      href: "#",
+      en: {
+        ariaLabel: "Traversal Level Case Study",
+        role: "Level design",
+        title: "Traversal Level Case Study",
+        summary: "Greybox study for route readability, pacing contrast, and encounter staging.",
+        linkLabel: "Case study placeholder",
+      },
+      zh: {
+        ariaLabel: "移动探索关卡案例",
+        role: "关卡设计",
+        title: "移动探索关卡案例",
+        summary: "关注路线可读性、节奏对比和遭遇编排的灰盒研究。",
+        linkLabel: "案例占位",
+      },
+    },
+    {
+      id: "constraint-puzzle",
+      visualClass: "puzzle-card",
+      href: "#",
+      en: {
+        ariaLabel: "Constraint-Based Puzzle Prototype",
+        role: "Game jam / experimental design",
+        title: "Constraint-Based Puzzle Prototype",
+        summary: "Fast prototype showing theme interpretation, compact teaching, and difficulty ramp.",
+        linkLabel: "Case study placeholder",
+      },
+      zh: {
+        ariaLabel: "约束型解谜原型案例",
+        role: "Game Jam / 实验设计",
+        title: "约束型解谜原型",
+        summary: "展示快速构思、主题转译、紧凑教学和难度曲线的原型。",
+        linkLabel: "案例占位",
+      },
+    },
+  ],
+  research: {
+    href: "#",
+    en: {
+      label: "Thesis placeholder",
+      title: "Player Motivation and Feedback in Interactive Systems",
+      summary:
+        "A compact summary placeholder connecting academic research to systems, progression, and player-facing feedback.",
+      questionLabel: "Question",
+      question: "How do feedback structures influence player motivation and decision-making?",
+      methodsLabel: "Methods / design link",
+      methods: "Literature review, comparative analysis, playtest observation.",
+      linkLabel: "PDF placeholder",
+    },
+    zh: {
+      label: "论文占位",
+      title: "互动系统中的玩家动机与反馈",
+      summary: "用于连接学术研究、系统设计、成长节奏和玩家反馈的论文摘要占位。",
+      questionLabel: "问题",
+      question: "反馈结构如何影响玩家动机和决策？",
+      methodsLabel: "方法 / 设计关联",
+      methods: "文献综述、比较分析、playtest 观察。",
+      linkLabel: "PDF 占位",
+    },
+  },
+  designDocs: [
+    {
+      id: "game-design-document",
+      href: "#",
+      en: {
+        type: "GDD",
+        title: "Game Design Document",
+        summary: "Core pillars, mechanics, loops, and player goals.",
+        linkLabel: "Document placeholder",
+      },
+      zh: {
+        type: "GDD",
+        title: "游戏设计文档",
+        summary: "核心支柱、机制、循环和玩家目标。",
+        linkLabel: "文档占位",
+      },
+    },
+    {
+      id: "level-blockout-notes",
+      href: "#",
+      en: {
+        type: "Level notes",
+        title: "Level Blockout Notes",
+        summary: "Route plans, gates, sightlines, and encounter pacing.",
+        linkLabel: "Document placeholder",
+      },
+      zh: {
+        type: "关卡笔记",
+        title: "关卡 Blockout 笔记",
+        summary: "路线规划、门槛、视线和遭遇节奏。",
+        linkLabel: "文档占位",
+      },
+    },
+    {
+      id: "balance-sheet-system-specs",
+      href: "#",
+      en: {
+        type: "System specs",
+        title: "Balance Sheet / System Specs",
+        summary: "Variables, tuning notes, test cases, and design rationale.",
+        linkLabel: "Document placeholder",
+      },
+      zh: {
+        type: "系统规格",
+        title: "平衡表 / 系统规格",
+        summary: "变量、调校笔记、测试用例和设计理由。",
+        linkLabel: "文档占位",
+      },
+    },
+  ],
+};
