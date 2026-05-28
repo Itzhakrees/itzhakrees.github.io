@@ -98,17 +98,27 @@ function renderProjects(language) {
       card.setAttribute("aria-label", content.ariaLabel);
 
       const visual = document.createElement("span");
-      visual.className = "project-visual";
+      visual.className = ["project-visual", project.coverClass].filter(Boolean).join(" ");
       visual.setAttribute("aria-hidden", "true");
+      if (project.cover) {
+        visual.style.backgroundImage = `url("${project.cover}")`;
+      }
 
       const cardContent = document.createElement("span");
       cardContent.className = "project-content";
-      cardContent.append(
+
+      const cardHeader = document.createElement("span");
+      cardHeader.className = "project-card-header";
+      cardHeader.append(
         createTextElement("span", "project-role", content.role),
         createTextElement("span", "project-title", content.title),
-        createTextElement("span", "project-summary", content.summary),
-        createTextElement("span", "project-link", content.linkLabel),
       );
+
+      const cardReveal = document.createElement("span");
+      cardReveal.className = "project-card-reveal";
+      cardReveal.append(createTextElement("span", "project-summary", content.summary));
+
+      cardContent.append(cardHeader, cardReveal);
 
       card.append(visual, cardContent);
       return card;

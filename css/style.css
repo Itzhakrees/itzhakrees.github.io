@@ -155,7 +155,6 @@
 }
 
 .intro-links a:hover,
-.project-card:hover .project-link,
 .doc-card:hover .project-link,
 .text-link:hover {
   text-decoration: underline;
@@ -167,7 +166,21 @@
   gap: 20px;
 }
 
-.project-card,
+.project-card {
+  position: relative;
+  display: grid;
+  grid-template-rows: minmax(180px, 1fr) minmax(180px, 1fr);
+  overflow: hidden;
+  min-height: 380px;
+  aspect-ratio: 4 / 3;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: 0 8px 28px rgba(31, 37, 38, 0.07);
+  text-decoration: none;
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
 .doc-card {
   position: relative;
   display: grid;
@@ -182,24 +195,32 @@
 }
 
 .project-card:hover,
+.project-card:focus-visible,
 .doc-card:hover {
   transform: translateY(-4px);
   border-color: rgba(23, 107, 104, 0.42);
   box-shadow: 0 18px 42px rgba(31, 37, 38, 0.14);
 }
 
-.project-visual {
-  min-height: 96px;
+.project-card:focus-visible {
+  outline: 3px solid rgba(23, 107, 104, 0.28);
+  outline-offset: 4px;
 }
 
-.systems-card .project-visual {
+.project-visual {
+  min-height: 0;
+  background-position: center;
+  background-size: cover;
+}
+
+.systems-cover {
   background:
     linear-gradient(135deg, rgba(23, 107, 104, 0.94), rgba(31, 37, 38, 0.22)),
     repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.24) 0 2px, transparent 2px 24px),
     #176b68;
 }
 
-.level-card .project-visual {
+.level-cover {
   background:
     linear-gradient(135deg, rgba(154, 77, 57, 0.9), rgba(31, 37, 38, 0.2)),
     linear-gradient(90deg, transparent 47%, rgba(255, 255, 255, 0.34) 47% 53%, transparent 53%),
@@ -207,7 +228,7 @@
     #9a4d39;
 }
 
-.puzzle-card .project-visual {
+.puzzle-cover {
   background:
     linear-gradient(135deg, rgba(37, 83, 133, 0.88), rgba(31, 37, 38, 0.22)),
     radial-gradient(circle at 74% 34%, rgba(255, 255, 255, 0.4) 0 8%, transparent 9%),
@@ -215,12 +236,39 @@
     #255385;
 }
 
-.project-content,
+.project-content {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 14px;
+  align-content: end;
+  padding: 22px;
+}
+
 .doc-card {
   display: grid;
   gap: 10px;
   align-content: start;
   padding: 22px;
+}
+
+.project-card-header,
+.project-card-reveal {
+  display: grid;
+  gap: 8px;
+}
+
+.project-card-reveal {
+  align-self: start;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.project-card:hover .project-card-reveal,
+.project-card:focus .project-card-reveal,
+.project-card:focus-visible .project-card-reveal {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .project-role,
@@ -244,6 +292,11 @@
 .doc-summary,
 .research-card p {
   color: var(--muted);
+}
+
+.project-summary {
+  max-width: 34rem;
+  line-height: 1.45;
 }
 
 .research-section {
