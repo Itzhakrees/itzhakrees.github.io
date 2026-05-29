@@ -169,7 +169,7 @@
 .project-card {
   position: relative;
   display: grid;
-  grid-template-rows: minmax(180px, 1fr) minmax(180px, 1fr);
+  grid-template-rows: minmax(0, 3fr) minmax(0, 1fr);
   overflow: hidden;
   min-height: 380px;
   aspect-ratio: 4 / 3;
@@ -237,11 +237,27 @@
 }
 
 .project-content {
+  position: relative;
+  z-index: 1;
+  isolation: isolate;
   display: grid;
-  grid-template-rows: auto 1fr;
+  grid-template-rows: auto;
   gap: 14px;
   align-content: end;
+  min-height: 0;
+  overflow: visible;
   padding: 22px;
+  transform: translateY(0);
+  transition: transform 180ms ease;
+}
+
+.project-content::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 -118px;
+  z-index: 0;
+  border-top: 1px solid var(--line);
+  background: var(--surface);
 }
 
 .doc-card {
@@ -253,22 +269,31 @@
 
 .project-card-header,
 .project-card-reveal {
+  position: relative;
+  z-index: 1;
   display: grid;
   gap: 8px;
 }
 
 .project-card-reveal {
-  align-self: start;
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 22px;
+  left: 22px;
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 180ms ease, transform 180ms ease;
+  transition: opacity 180ms ease;
+}
+
+.project-card:hover .project-content,
+.project-card:focus .project-content,
+.project-card:focus-visible .project-content {
+  transform: translateY(-78px);
 }
 
 .project-card:hover .project-card-reveal,
 .project-card:focus .project-card-reveal,
 .project-card:focus-visible .project-card-reveal {
   opacity: 1;
-  transform: translateY(0);
 }
 
 .project-role,
