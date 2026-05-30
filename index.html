@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Game systems, gameplay, and level design portfolio for Itzhak Rees."
+    />
+    <title>Itzhak Rees | Game Systems & Level Designer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="css/utilities.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main" data-i18n="skipLink"></a>
+
+    <header class="site-header">
+      <nav class="nav container" aria-label="Primary navigation">
+        <a class="brand" href="#top" aria-label="Itzhak Rees portfolio home">
+          <span class="brand-mark">IR</span>
+          <span class="brand-text">Itzhak Rees</span>
+        </a>
+
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="primary-menu"
+          aria-label="Open navigation"
+          data-i18n-aria-label="navOpen"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <div class="nav-menu" id="primary-menu">
+          <a href="#projects" data-i18n="navProjects"></a>
+          <a href="#research" data-i18n="navResearch"></a>
+          <a href="#design-docs" data-i18n="navDesignDocs"></a>
+          <button class="language-toggle" type="button" data-language-toggle aria-pressed="false"></button>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="intro section" id="top">
+        <div class="container intro-grid">
+          <div class="intro-main">
+            <p class="eyebrow" data-i18n="introEyebrow"></p>
+            <h1 data-i18n="introName"></h1>
+            <p class="intro-role" data-i18n="introRole"></p>
+            <p class="intro-copy" data-i18n="introCopy"></p>
+          </div>
+
+          <aside class="intro-aside" aria-label="Contact and focus" data-i18n-aria-label="introAsideLabel">
+            <div>
+              <span data-i18n="introFocusLabel"></span>
+              <strong data-i18n="introFocus"></strong>
+            </div>
+            <div class="intro-links">
+              <a href="mailto:your.email@example.com" data-i18n="introEmail"></a>
+              <a href="https://www.linkedin.com/" data-i18n="introLinkedin"></a>
+              <a href="#" data-i18n="introResume"></a>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section projects-section" id="projects">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow" data-i18n="projectsEyebrow"></p>
+            <h2 data-i18n="projectsTitle"></h2>
+            <p data-i18n="projectsIntro"></p>
+          </div>
+
+          <div class="project-grid" data-projects></div>
+        </div>
+      </section>
+
+      <section class="section research-section" id="research">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow" data-i18n="researchEyebrow"></p>
+            <h2 data-i18n="researchTitle"></h2>
+            <p data-i18n="researchIntro"></p>
+          </div>
+
+          <div data-research></div>
+        </div>
+      </section>
+
+      <section class="section docs-section" id="design-docs">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow" data-i18n="docsEyebrow"></p>
+            <h2 data-i18n="docsTitle"></h2>
+            <p data-i18n="docsIntro"></p>
+          </div>
+
+          <div class="docs-grid" data-design-docs></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p data-i18n="footerCopyright"></p>
+        <p data-i18n="footerCredit"></p>
+      </div>
+    </footer>
+
+    <script src="js/content.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
