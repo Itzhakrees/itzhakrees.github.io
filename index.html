@@ -14,11 +14,12 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
+    <link rel="icon" href="data:," />
     <link rel="stylesheet" href="css/utilities.css" />
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <a class="skip-link" href="#main" data-i18n="skipLink">Skip to main content</a>
+    <a class="skip-link" href="#main" data-i18n="skipLink"></a>
 
     <header class="site-header">
       <nav class="nav container" aria-label="Primary navigation">
@@ -41,12 +42,10 @@
         </button>
 
         <div class="nav-menu" id="primary-menu">
-          <a href="#projects" data-i18n="navProjects">Project</a>
-          <a href="#research" data-i18n="navResearch">Research</a>
-          <a href="#design-docs" data-i18n="navDesignDocs">Design Docs</a>
-          <button class="language-toggle" type="button" data-language-toggle aria-pressed="false">
-            中文
-          </button>
+          <a href="#projects" data-i18n="navProjects"></a>
+          <a href="#research" data-i18n="navResearch"></a>
+          <a href="#design-docs" data-i18n="navDesignDocs"></a>
+          <button class="language-toggle" type="button" data-language-toggle aria-pressed="false"></button>
         </div>
       </nav>
     </header>
@@ -55,24 +54,21 @@
       <section class="intro section" id="top">
         <div class="container intro-grid">
           <div class="intro-main">
-            <p class="eyebrow" data-i18n="introEyebrow">Game design portfolio</p>
-            <h1>Itzhak Rees</h1>
-            <p class="intro-role" data-i18n="introRole">Game Systems & Level Designer</p>
-            <p class="intro-copy" data-i18n="introCopy">
-              I design readable systems, expressive mechanics, and levels that make player choices
-              feel intentional from the first minute.
-            </p>
+            <p class="eyebrow" data-i18n="introEyebrow"></p>
+            <h1 data-i18n="introName"></h1>
+            <p class="intro-role" data-i18n="introRole"></p>
+            <p class="intro-copy" data-i18n="introCopy"></p>
           </div>
 
           <aside class="intro-aside" aria-label="Contact and focus" data-i18n-aria-label="introAsideLabel">
             <div>
-              <span data-i18n="introFocusLabel">Focus</span>
-              <strong data-i18n="introFocus">Systems, gameplay, level flow, and iteration</strong>
+              <span data-i18n="introFocusLabel"></span>
+              <strong data-i18n="introFocus"></strong>
             </div>
             <div class="intro-links">
-              <a href="mailto:your.email@example.com" data-i18n="introEmail">Email</a>
-              <a href="https://www.linkedin.com/" data-i18n="introLinkedin">LinkedIn</a>
-              <a href="#" data-i18n="introResume">Resume</a>
+              <a href="mailto:your.email@example.com" data-i18n="introEmail"></a>
+              <a href="https://www.linkedin.com/" data-i18n="introLinkedin"></a>
+              <a href="#" data-i18n="introResume"></a>
             </div>
           </aside>
         </div>
@@ -81,12 +77,9 @@
       <section class="section projects-section" id="projects">
         <div class="container">
           <div class="section-heading">
-            <p class="eyebrow" data-i18n="projectsEyebrow">Selected work</p>
-            <h2 data-i18n="projectsTitle">Project</h2>
-            <p data-i18n="projectsIntro">
-              Compact case-study placeholders for design leads: what the project is, what I owned,
-              and where the full breakdown will live.
-            </p>
+            <p class="eyebrow" data-i18n="projectsEyebrow"></p>
+            <h2 data-i18n="projectsTitle"></h2>
+            <p data-i18n="projectsIntro"></p>
           </div>
 
           <div class="project-grid" data-projects></div>
@@ -96,12 +89,9 @@
       <section class="section research-section" id="research">
         <div class="container">
           <div class="section-heading">
-            <p class="eyebrow" data-i18n="researchEyebrow">Research</p>
-            <h2 data-i18n="researchTitle">Thesis research</h2>
-            <p data-i18n="researchIntro">
-              Research is presented as design evidence: how I frame questions, evaluate player
-              experience, and translate findings into practical design choices.
-            </p>
+            <p class="eyebrow" data-i18n="researchEyebrow"></p>
+            <h2 data-i18n="researchTitle"></h2>
+            <p data-i18n="researchIntro"></p>
           </div>
 
           <div data-research></div>
@@ -111,12 +101,9 @@
       <section class="section docs-section" id="design-docs">
         <div class="container">
           <div class="section-heading">
-            <p class="eyebrow" data-i18n="docsEyebrow">Documentation</p>
-            <h2 data-i18n="docsTitle">Design Docs</h2>
-            <p data-i18n="docsIntro">
-              Placeholder documents for the way I communicate systems, levels, balance, and
-              production-ready design intent.
-            </p>
+            <p class="eyebrow" data-i18n="docsEyebrow"></p>
+            <h2 data-i18n="docsTitle"></h2>
+            <p data-i18n="docsIntro"></p>
           </div>
 
           <div class="docs-grid" data-design-docs></div>
@@ -126,8 +113,8 @@
 
     <footer class="site-footer">
       <div class="container footer-inner">
-        <p data-i18n="footerCopyright">© 2026 Itzhak Rees. Game design portfolio.</p>
-        <p data-i18n="footerCredit">Static portfolio adapted from an MIT-licensed HTML portfolio template structure.</p>
+        <p data-i18n="footerCopyright"></p>
+        <p data-i18n="footerCredit"></p>
       </div>
     </footer>
 
