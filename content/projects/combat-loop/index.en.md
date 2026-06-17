@@ -1,3 +1,21 @@
+---
+id: "combat-loop"
+lang: "en"
+status: "published"
+featured: true
+order: 1
+title: "Combat Loop Prototype"
+role: "Gameplay / systems design"
+summary: "Core combat rhythm prototype focused on risk-reward tuning and readable feedback."
+description: "Core combat rhythm prototype focused on risk-reward tuning and readable feedback."
+# Add a real project cover at ./img/cover.webp, then set cover to "./img/cover.webp".
+cover: ""
+visualClass: "systems-card"
+coverClass: "systems-cover"
+tags: ["Combat Design","Game Systems","Prototype"]
+tools: ["Unity","C#"]
+date: "2026-05-30"
+---
 # Combat Loop Prototype
 
 ## Overview

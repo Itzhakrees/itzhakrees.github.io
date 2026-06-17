@@ -1,3 +1,21 @@
+---
+id: "traversal-level"
+lang: "en"
+status: "published"
+featured: true
+order: 2
+title: "Traversal Level Case Study"
+role: "Level design"
+summary: "Greybox study for route readability, pacing contrast, and encounter staging."
+description: "Greybox study for route readability, pacing contrast, and encounter staging."
+# Add a real project cover at ./img/cover.webp, then set cover to "./img/cover.webp".
+cover: ""
+visualClass: "level-card"
+coverClass: "level-cover"
+tags: ["Level Design","Greybox","Encounter Design"]
+tools: ["Unity","Greybox"]
+date: "2026-05-20"
+---
 # Traversal Level Case Study
 
 ## Overview

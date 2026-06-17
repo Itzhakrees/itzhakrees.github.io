@@ -1,3 +1,21 @@
+---
+id: "combat-loop"
+lang: "zh"
+status: "published"
+featured: true
+order: 1
+title: "战斗循环原型"
+role: "玩法 / 系统设计"
+summary: "围绕核心战斗节奏、风险回报调校和清晰反馈建立的原型。"
+description: "围绕核心战斗节奏、风险回报调校和清晰反馈建立的原型。"
+# Add a real project cover at ./img/cover.webp, then set cover to "./img/cover.webp".
+cover: ""
+visualClass: "systems-card"
+coverClass: "systems-cover"
+tags: ["Combat Design","Game Systems","Prototype"]
+tools: ["Unity","C#"]
+date: "2026-05-30"
+---
 # 战斗循环原型
 
 ## 项目概述

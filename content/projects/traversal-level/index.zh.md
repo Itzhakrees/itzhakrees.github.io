@@ -1,3 +1,21 @@
+---
+id: "traversal-level"
+lang: "zh"
+status: "published"
+featured: true
+order: 2
+title: "移动探索关卡案例"
+role: "关卡设计"
+summary: "关注路线可读性、节奏对比和遭遇编排的灰盒研究。"
+description: "关注路线可读性、节奏对比和遭遇编排的灰盒研究。"
+# Add a real project cover at ./img/cover.webp, then set cover to "./img/cover.webp".
+cover: ""
+visualClass: "level-card"
+coverClass: "level-cover"
+tags: ["Level Design","Greybox","Encounter Design"]
+tools: ["Unity","Greybox"]
+date: "2026-05-20"
+---
 # 移动探索关卡案例
 
 ## 项目概述

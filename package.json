@@ -1,0 +1,13 @@
+{
+  "name": "itzhakrees.github.io",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build-content.mjs",
+    "dev": "npm run build && npx serve ."
+  },
+  "devDependencies": {
+    "serve": "^14.2.4"
+  }
+}

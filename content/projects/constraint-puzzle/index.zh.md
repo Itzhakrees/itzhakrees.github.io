@@ -1,3 +1,21 @@
+---
+id: "constraint-puzzle"
+lang: "zh"
+status: "published"
+featured: true
+order: 3
+title: "约束型解谜原型"
+role: "Game Jam / 实验设计"
+summary: "展示快速构思、主题转译、紧凑教学和难度曲线的原型。"
+description: "展示快速构思、主题转译、紧凑教学和难度曲线的原型。"
+# Add a real project cover at ./img/cover.webp, then set cover to "./img/cover.webp".
+cover: ""
+visualClass: "puzzle-card"
+coverClass: "puzzle-cover"
+tags: ["Puzzle Design","Game Jam","Prototype"]
+tools: ["Unity","Rapid Prototyping"]
+date: "2026-05-10"
+---
 # 约束型解谜原型
 
 ## 项目概述

@@ -1,3 +1,21 @@
+---
+id: "constraint-puzzle"
+lang: "en"
+status: "published"
+featured: true
+order: 3
+title: "Constraint-Based Puzzle Prototype"
+role: "Game jam / experimental design"
+summary: "Fast prototype showing theme interpretation, compact teaching, and difficulty ramp."
+description: "Fast prototype showing theme interpretation, compact teaching, and difficulty ramp."
+# Add a real project cover at ./img/cover.webp, then set cover to "./img/cover.webp".
+cover: ""
+visualClass: "puzzle-card"
+coverClass: "puzzle-cover"
+tags: ["Puzzle Design","Game Jam","Prototype"]
+tools: ["Unity","Rapid Prototyping"]
+date: "2026-05-10"
+---
 # Constraint-Based Puzzle Prototype
 
 ## Overview

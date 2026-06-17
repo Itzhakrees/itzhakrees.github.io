@@ -27,6 +27,10 @@ function getCurrentProjectId() {
 }
 
 function getCurrentProject() {
+  if (!window.portfolioContent || !window.portfolioContent.projects) {
+    return null;
+  }
+
   const projectId = getCurrentProjectId();
   return window.portfolioContent.projects.find((project) => project.id === projectId);
 }
@@ -133,6 +137,43 @@ function renderMarkdown(markdown) {
   return injectVideoPlaceholders(safeHtml, videos);
 }
 
+function stripFrontmatter(markdown) {
+  return markdown.replace(/^---\s*[\r\n][\s\S]*?[\r\n]---\s*/, "");
+}
+
+function hasUrlScheme(value) {
+  return /^[a-z][a-z0-9+.-]*:/i.test(value);
+}
+
+function isAnchor(value) {
+  return value.startsWith("#");
+}
+
+function isRootRelative(value) {
+  return value.startsWith("/");
+}
+
+function resolveProjectAssetUrl(project, value) {
+  if (!value || hasUrlScheme(value) || isAnchor(value) || isRootRelative(value)) {
+    return value;
+  }
+
+  const assetBase = project.assetBase || `content/projects/${project.id}/`;
+  const cleanValue = value.replace(/^\.?\//, "");
+  return `${pageRoot}${assetBase}${cleanValue}`;
+}
+
+function rewriteMarkdownAssetUrls(container, project) {
+  container.querySelectorAll("img[src], video[src], source[src], a[href]").forEach((element) => {
+    const attr = element.hasAttribute("src") ? "src" : "href";
+    const value = element.getAttribute(attr);
+
+    if (!value) return;
+
+    element.setAttribute(attr, resolveProjectAssetUrl(project, value));
+  });
+}
+
 function getVideoEmbedUrl(provider, id) {
   if (provider === "youtube") {
     return `https://www.youtube-nocookie.com/embed/${encodeURIComponent(id)}`;
@@ -178,10 +219,11 @@ async function loadProjectArticle(project, language) {
       throw new Error(`Unable to load ${markdownUrl}`);
     }
 
-    const markdown = await response.text();
+    const markdown = stripFrontmatter(await response.text());
     if (requestId !== currentRequest) return;
 
     projectArticle.innerHTML = renderMarkdown(markdown);
+    rewriteMarkdownAssetUrls(projectArticle, project);
     hydrateVideoEmbeds(projectArticle);
   } catch (error) {
     if (requestId !== currentRequest) return;

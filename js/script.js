@@ -25,8 +25,16 @@ function createTextElement(tagName, className, text) {
 function renderProjects(language) {
   if (!projectGrid || !window.portfolioContent) return;
 
+  const visibleProjects = [...(window.portfolioContent.projects || [])]
+    .filter((project) => project.featured !== false)
+    .sort((a, b) => {
+      const orderDifference = (a.order || 999) - (b.order || 999);
+      if (orderDifference) return orderDifference;
+      return String(b.date || "").localeCompare(String(a.date || ""));
+    });
+
   projectGrid.replaceChildren(
-    ...window.portfolioContent.projects.map((project) => {
+    ...visibleProjects.map((project) => {
       const content = getLocalizedContent(project, language);
       const card = document.createElement("a");
       card.className = ["project-card", project.visualClass].filter(Boolean).join(" ");
