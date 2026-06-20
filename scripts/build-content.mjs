@@ -126,6 +126,24 @@ function normalizeProjectAssetPath(projectId, assetPath) {
   return `content/projects/${projectId}/${assetPath.replace(/^\.?\//, "")}`;
 }
 
+async function validateProjectAssetPath(projectId, assetPath, fileName) {
+  if (!assetPath || isExternalUrl(assetPath)) return;
+
+  const segments = assetPath.replace(/^\.?\//, "").split("/");
+  let currentDir = path.join(contentDir, projectId);
+
+  for (const segment of segments) {
+    const entries = await fs.readdir(currentDir, { withFileTypes: true });
+    const exactEntry = entries.find((entry) => entry.name === segment);
+
+    if (!exactEntry) {
+      throw new Error(`${fileName}: asset path "${assetPath}" does not match an existing file exactly.`);
+    }
+
+    currentDir = path.join(currentDir, exactEntry.name);
+  }
+}
+
 function makeLocalizedEntry(primary, fallback) {
   const title = primary.title || fallback.title || "";
   const summary = primary.summary || fallback.summary || "";
@@ -182,6 +200,7 @@ async function readProjectMarkdown(projectId, lang) {
   const parsed = parseFrontmatter(source, `${projectId}/${fileName}`);
 
   validateProjectData(parsed.data, `${projectId}/${fileName}`, projectId, lang);
+  await validateProjectAssetPath(projectId, parsed.data.cover, `${projectId}/${fileName}`);
 
   return parsed.data;
 }
@@ -243,6 +262,8 @@ async function generateContentData(projects, siteData) {
 async function generateProjectPages(projects) {
   const template = await fs.readFile(projectTemplatePath, "utf8");
 
+  // This directory is generated. Recreate it so unpublished project pages do not linger.
+  await fs.rm(projectsOutputDir, { recursive: true, force: true });
   await ensureDir(projectsOutputDir);
 
   for (const project of projects) {

@@ -9,7 +9,7 @@ role: "关卡 & 玩法设计"
 summary: "以贪婪为特色玩法的中式摸金风格搜打撤关卡"
 description: "以贪婪为特色玩法的中式摸金风格搜打撤关卡"
 # Add a real project cover at ./img/cover.webp, then set cover to "./img/cover.webp".
-cover: "./img/cover.png"
+cover: "./img/Cover.png"
 visualClass: "level-card"
 coverClass: "level-card"
 tags: ["Level Design","Gameplay Design","Prototype"]

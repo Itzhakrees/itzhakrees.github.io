@@ -26,6 +26,7 @@ function renderProjects(language) {
   if (!projectGrid || !window.portfolioContent) return;
 
   const visibleProjects = [...(window.portfolioContent.projects || [])]
+    .filter((project) => project.status === "published")
     .filter((project) => project.featured !== false)
     .sort((a, b) => {
       const orderDifference = (a.order || 999) - (b.order || 999);
