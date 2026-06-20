@@ -1,7 +1,7 @@
 ---
 id: "MPC"
 lang: "zh"
-status: "published"
+status: "draft"
 featured: true
 order: 2
 title: "战斗循环原型"

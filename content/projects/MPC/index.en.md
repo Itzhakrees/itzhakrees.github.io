@@ -1,7 +1,7 @@
 ---
 id: "MPC"
 lang: "en"
-status: "published"
+status: "draft"
 featured: true
 order: 2
 title: "Combat Loop Prototype"
