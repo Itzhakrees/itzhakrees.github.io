@@ -83,7 +83,7 @@ window.portfolioContent = {
       "status": "published",
       "visualClass": "level-card",
       "coverClass": "level-card",
-      "cover": "content/projects/25Tencent-Training/img/cover.png",
+      "cover": "content/projects/25Tencent-Training/img/Cover.png",
       "href": "projects/25Tencent-Training/",
       "contentBase": "content/projects/25Tencent-Training",
       "markdownBase": "content/projects/25Tencent-Training/index",
@@ -152,48 +152,11 @@ window.portfolioContent = {
       }
     },
     {
-      "id": "Phobos",
-      "status": "published",
-      "visualClass": "systems-card",
-      "coverClass": "systems-cover",
-      "cover": "",
-      "href": "projects/Phobos/",
-      "contentBase": "content/projects/Phobos",
-      "markdownBase": "content/projects/Phobos/index",
-      "assetBase": "content/projects/Phobos/",
-      "featured": true,
-      "order": 3,
-      "tags": [
-        "Combat Design",
-        "Game Systems",
-        "Prototype"
-      ],
-      "tools": [
-        "Unity",
-        "C#"
-      ],
-      "date": "2026-05-30",
-      "en": {
-        "ariaLabel": "Combat Loop Prototype: Core combat rhythm prototype focused on risk-reward tuning and readable feedback.",
-        "role": "Gameplay / systems design",
-        "title": "Combat Loop Prototype",
-        "summary": "Core combat rhythm prototype focused on risk-reward tuning and readable feedback.",
-        "description": "Core combat rhythm prototype focused on risk-reward tuning and readable feedback."
-      },
-      "zh": {
-        "ariaLabel": "战斗循环原型: 围绕核心战斗节奏、风险回报调校和清晰反馈建立的原型。",
-        "role": "玩法 / 系统设计",
-        "title": "战斗循环原型",
-        "summary": "围绕核心战斗节奏、风险回报调校和清晰反馈建立的原型。",
-        "description": "围绕核心战斗节奏、风险回报调校和清晰反馈建立的原型。"
-      }
-    },
-    {
       "id": "Slackoff",
       "status": "published",
       "visualClass": "puzzle-card",
       "coverClass": "puzzle-cover",
-      "cover": "content/projects/Slackoff/img/cover.png",
+      "cover": "content/projects/Slackoff/img/Cover.png",
       "href": "projects/Slackoff/",
       "contentBase": "content/projects/Slackoff",
       "markdownBase": "content/projects/Slackoff/index",
@@ -211,18 +174,18 @@ window.portfolioContent = {
       ],
       "date": "2026-05-10",
       "en": {
-        "ariaLabel": "Constraint-Based Puzzle Prototype: Fast prototype showing theme interpretation, compact teaching, and difficulty ramp.",
-        "role": "Game jam / experimental design",
-        "title": "Constraint-Based Puzzle Prototype",
+        "ariaLabel": "Slack Off: Fast prototype showing theme interpretation, compact teaching, and difficulty ramp.",
+        "role": "Gameplay design",
+        "title": "Slack Off",
         "summary": "Fast prototype showing theme interpretation, compact teaching, and difficulty ramp.",
         "description": "Fast prototype showing theme interpretation, compact teaching, and difficulty ramp."
       },
       "zh": {
-        "ariaLabel": "约束型解谜原型: 展示快速构思、主题转译、紧凑教学和难度曲线的原型。",
-        "role": "Game Jam / 实验设计",
-        "title": "约束型解谜原型",
-        "summary": "展示快速构思、主题转译、紧凑教学和难度曲线的原型。",
-        "description": "展示快速构思、主题转译、紧凑教学和难度曲线的原型。"
+        "ariaLabel": "Slack Off: 基于记忆玩法的摸鱼主题桌游",
+        "role": "玩法设计",
+        "title": "Slack Off",
+        "summary": "基于记忆玩法的摸鱼主题桌游",
+        "description": "基于记忆玩法的摸鱼主题桌游"
       }
     }
   ],

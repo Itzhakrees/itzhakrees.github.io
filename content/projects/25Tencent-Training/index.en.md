@@ -9,7 +9,7 @@ role: "Level & gameplay Designer "
 summary: "levels"
 description: "levels"
 # Add a real project cover at ./img/cover.webp, then set cover to "./img/cover.webp".
-cover: "./img/cover.png"
+cover: "./img/Cover.png"
 visualClass: "level-card"
 coverClass: "level-card"
 tags: ["Level Design","Gameplay Design","Prototype"]
