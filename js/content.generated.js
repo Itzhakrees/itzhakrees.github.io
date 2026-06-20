@@ -79,17 +79,53 @@ window.portfolioContent = {
   },
   "projects": [
     {
-      "id": "combat-loop",
+      "id": "25Tencent-Training",
+      "status": "published",
+      "visualClass": "level-card",
+      "coverClass": "level-card",
+      "cover": "content/projects/25Tencent-Training/img/cover.png",
+      "href": "projects/25Tencent-Training/",
+      "contentBase": "content/projects/25Tencent-Training",
+      "markdownBase": "content/projects/25Tencent-Training/index",
+      "assetBase": "content/projects/25Tencent-Training/",
+      "featured": true,
+      "order": 1,
+      "tags": [
+        "Level Design",
+        "Gameplay Design",
+        "Prototype"
+      ],
+      "tools": [
+        "Unreal Engine 5"
+      ],
+      "date": "2026-05-30",
+      "en": {
+        "ariaLabel": "tencent: levels",
+        "role": "Level & gameplay Designer ",
+        "title": "tencent",
+        "summary": "levels",
+        "description": "levels"
+      },
+      "zh": {
+        "ariaLabel": "中式恐怖搜打撤关卡: 以贪婪为特色玩法的中式摸金风格搜打撤关卡",
+        "role": "关卡 & 玩法设计",
+        "title": "中式恐怖搜打撤关卡",
+        "summary": "以贪婪为特色玩法的中式摸金风格搜打撤关卡",
+        "description": "以贪婪为特色玩法的中式摸金风格搜打撤关卡"
+      }
+    },
+    {
+      "id": "MPC",
       "status": "published",
       "visualClass": "systems-card",
       "coverClass": "systems-cover",
       "cover": "",
-      "href": "projects/combat-loop/",
-      "contentBase": "content/projects/combat-loop",
-      "markdownBase": "content/projects/combat-loop/index",
-      "assetBase": "content/projects/combat-loop/",
+      "href": "projects/MPC/",
+      "contentBase": "content/projects/MPC",
+      "markdownBase": "content/projects/MPC/index",
+      "assetBase": "content/projects/MPC/",
       "featured": true,
-      "order": 1,
+      "order": 2,
       "tags": [
         "Combat Design",
         "Game Systems",
@@ -116,54 +152,54 @@ window.portfolioContent = {
       }
     },
     {
-      "id": "traversal-level",
+      "id": "Phobos",
       "status": "published",
-      "visualClass": "level-card",
-      "coverClass": "level-cover",
+      "visualClass": "systems-card",
+      "coverClass": "systems-cover",
       "cover": "",
-      "href": "projects/traversal-level/",
-      "contentBase": "content/projects/traversal-level",
-      "markdownBase": "content/projects/traversal-level/index",
-      "assetBase": "content/projects/traversal-level/",
+      "href": "projects/Phobos/",
+      "contentBase": "content/projects/Phobos",
+      "markdownBase": "content/projects/Phobos/index",
+      "assetBase": "content/projects/Phobos/",
       "featured": true,
-      "order": 2,
+      "order": 3,
       "tags": [
-        "Level Design",
-        "Greybox",
-        "Encounter Design"
+        "Combat Design",
+        "Game Systems",
+        "Prototype"
       ],
       "tools": [
         "Unity",
-        "Greybox"
+        "C#"
       ],
-      "date": "2026-05-20",
+      "date": "2026-05-30",
       "en": {
-        "ariaLabel": "Traversal Level Case Study: Greybox study for route readability, pacing contrast, and encounter staging.",
-        "role": "Level design",
-        "title": "Traversal Level Case Study",
-        "summary": "Greybox study for route readability, pacing contrast, and encounter staging.",
-        "description": "Greybox study for route readability, pacing contrast, and encounter staging."
+        "ariaLabel": "Combat Loop Prototype: Core combat rhythm prototype focused on risk-reward tuning and readable feedback.",
+        "role": "Gameplay / systems design",
+        "title": "Combat Loop Prototype",
+        "summary": "Core combat rhythm prototype focused on risk-reward tuning and readable feedback.",
+        "description": "Core combat rhythm prototype focused on risk-reward tuning and readable feedback."
       },
       "zh": {
-        "ariaLabel": "移动探索关卡案例: 关注路线可读性、节奏对比和遭遇编排的灰盒研究。",
-        "role": "关卡设计",
-        "title": "移动探索关卡案例",
-        "summary": "关注路线可读性、节奏对比和遭遇编排的灰盒研究。",
-        "description": "关注路线可读性、节奏对比和遭遇编排的灰盒研究。"
+        "ariaLabel": "战斗循环原型: 围绕核心战斗节奏、风险回报调校和清晰反馈建立的原型。",
+        "role": "玩法 / 系统设计",
+        "title": "战斗循环原型",
+        "summary": "围绕核心战斗节奏、风险回报调校和清晰反馈建立的原型。",
+        "description": "围绕核心战斗节奏、风险回报调校和清晰反馈建立的原型。"
       }
     },
     {
-      "id": "constraint-puzzle",
+      "id": "Slackoff",
       "status": "published",
       "visualClass": "puzzle-card",
       "coverClass": "puzzle-cover",
-      "cover": "",
-      "href": "projects/constraint-puzzle/",
-      "contentBase": "content/projects/constraint-puzzle",
-      "markdownBase": "content/projects/constraint-puzzle/index",
-      "assetBase": "content/projects/constraint-puzzle/",
+      "cover": "content/projects/Slackoff/img/cover.png",
+      "href": "projects/Slackoff/",
+      "contentBase": "content/projects/Slackoff",
+      "markdownBase": "content/projects/Slackoff/index",
+      "assetBase": "content/projects/Slackoff/",
       "featured": true,
-      "order": 3,
+      "order": 4,
       "tags": [
         "Puzzle Design",
         "Game Jam",

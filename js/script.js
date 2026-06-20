@@ -7,7 +7,7 @@ const projectGrid = document.querySelector("[data-projects]");
 const researchMount = document.querySelector("[data-research]");
 const docsGrid = document.querySelector("[data-design-docs]");
 
-let currentLanguage = localStorage.getItem("portfolioLanguage") || "en";
+let currentLanguage = localStorage.getItem("portfolioLanguage") || "zh";
 
 function getLocalizedContent(item, language) {
   return item[language] || item.en;

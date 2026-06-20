@@ -10,7 +10,7 @@ const projectTitle = document.querySelector("[data-project-title]");
 const projectSummary = document.querySelector("[data-project-summary]");
 const projectArticle = document.querySelector("[data-project-article]");
 
-let currentLanguage = localStorage.getItem("portfolioLanguage") || "en";
+let currentLanguage = localStorage.getItem("portfolioLanguage") || "zh";
 let currentRequest = 0;
 
 function getLocalizedContent(item, language) {
@@ -61,7 +61,7 @@ function isSafeMarkdownUrl(url) {
 }
 
 function renderInlineMarkdown(text) {
-  return escapeHtml(text)
+  return restoreAllowedHtml(escapeHtml(text))
     .replace(/!\[([^\]]*)\]\(([^)\s]+)\)/g, (_, alt, url) => {
       if (!isSafeMarkdownUrl(url)) return alt;
       return `<img src="${url}" alt="${alt}" loading="lazy">`;
@@ -73,44 +73,192 @@ function renderInlineMarkdown(text) {
     });
 }
 
+function slugifyHeading(text, usedSlugs) {
+  const base = text
+    .replace(/<[^>]+>/g, "")
+    .trim()
+    .toLowerCase()
+    .replace(/&[a-z0-9#]+;/gi, "")
+    .replace(/[^\p{L}\p{N}\s-]/gu, "")
+    .replace(/\s+/g, "-")
+    .replace(/-+/g, "-")
+    .replace(/^-|-$/g, "") || "section";
+  const count = usedSlugs.get(base) || 0;
+  usedSlugs.set(base, count + 1);
+  return count ? `${base}-${count + 1}` : base;
+}
+
+function parseAttributes(source, allowedAttributes) {
+  const attrs = [];
+  source.replace(/([a-z:-]+)\s*=\s*("([^"]*)"|'([^']*)'|&quot;([^&]*)&quot;|&#39;([^&]*)&#39;|([^\s>]+))/gi, (_, name, __, doubleValue, singleValue, quotedValue, aposValue, bareValue) => {
+    const normalizedName = name.toLowerCase();
+    if (!allowedAttributes.includes(normalizedName)) return "";
+
+    const value = doubleValue ?? singleValue ?? quotedValue ?? aposValue ?? bareValue ?? "";
+    if ((normalizedName === "src" || normalizedName === "href") && !isSafeMarkdownUrl(value)) return "";
+    attrs.push(`${normalizedName}="${escapeHtml(value)}"`);
+    return "";
+  });
+  return attrs.length ? ` ${attrs.join(" ")}` : "";
+}
+
+function restoreAllowedHtml(source) {
+  let output = source;
+  output = output.replace(/&lt;(\/?)p\b([\s\S]*?)&gt;/gi, (_, slash, attrs) => {
+    if (slash) return "</p>";
+    const safeAttrs = parseAttributes(attrs, ["align"]);
+    return `<p${safeAttrs}>`;
+  });
+
+  output = output.replace(/&lt;img\b([\s\S]*?)&gt;/gi, (_, attrs) => {
+    const safeAttrs = parseAttributes(attrs, ["src", "alt", "width", "height", "style", "title"]);
+    return `<img${safeAttrs} loading="lazy">`;
+  });
+
+  output = output.replace(/&lt;br\s*\/?&gt;/gi, "<br>");
+  return output;
+}
+
+function getHeading(line) {
+  const match = /^(#{1,6})\s+(.+)$/.exec(line);
+  if (!match) return null;
+  return {
+    level: match[1].length,
+    text: match[2].trim(),
+  };
+}
+
+function isTableDivider(line) {
+  return /^\|?\s*:?-{3,}:?\s*(\|\s*:?-{3,}:?\s*)+\|?$/.test(line.trim());
+}
+
+function splitTableRow(line) {
+  return line
+    .trim()
+    .replace(/^\|/, "")
+    .replace(/\|$/, "")
+    .split("|")
+    .map((cell) => cell.trim());
+}
+
+function renderTable(rows) {
+  if (rows.length < 2 || !isTableDivider(rows[1])) return "";
+
+  const headers = splitTableRow(rows[0]);
+  const bodyRows = rows.slice(2).map(splitTableRow);
+  const head = headers.map((cell) => `<th>${renderInlineMarkdown(cell)}</th>`).join("");
+  const body = bodyRows
+    .map((row) => `<tr>${row.map((cell) => `<td>${renderInlineMarkdown(cell)}</td>`).join("")}</tr>`)
+    .join("");
+
+  return `<div class="markdown-table-wrap"><table><thead><tr>${head}</tr></thead><tbody>${body}</tbody></table></div>`;
+}
+
+function renderToc(headings) {
+  const tocItems = headings
+    .filter((heading) => heading.level >= 2 && heading.level <= 4)
+    .map((heading) => (
+      `<li class="toc-level-${heading.level}"><a href="#${heading.id}">${renderInlineMarkdown(heading.text)}</a></li>`
+    ))
+    .join("");
+
+  return tocItems ? `<nav class="markdown-toc" aria-label="Table of contents"><ol>${tocItems}</ol></nav>` : "";
+}
+
 function renderBasicMarkdown(markdown) {
   const lines = markdown.split(/\r?\n/);
   const html = [];
-  let listItems = [];
+  const headings = [];
+  const usedSlugs = new Map();
+  let listStack = [];
+  let tableRows = [];
 
-  function flushList() {
-    if (!listItems.length) return;
-    html.push(`<ul>${listItems.map((item) => `<li>${renderInlineMarkdown(item)}</li>`).join("")}</ul>`);
-    listItems = [];
+  function closeListTo(indent) {
+    while (listStack.length && listStack[listStack.length - 1].indent >= indent) {
+      html.push(`</${listStack.pop().type}>`);
+    }
   }
 
-  lines.forEach((line) => {
+  function flushLists() {
+    closeListTo(-1);
+  }
+
+  function flushTable() {
+    if (!tableRows.length) return;
+    const tableHtml = renderTable(tableRows);
+    if (tableHtml) {
+      html.push(tableHtml);
+    } else {
+      tableRows.forEach((row) => html.push(`<p>${renderInlineMarkdown(row.trim())}</p>`));
+    }
+    tableRows = [];
+  }
+
+  for (let index = 0; index < lines.length; index += 1) {
+    const line = lines[index];
     const trimmed = line.trim();
     if (!trimmed) {
-      flushList();
-      return;
+      flushTable();
+      flushLists();
+      continue;
     }
 
-    if (trimmed.startsWith("- ")) {
-      listItems.push(trimmed.slice(2));
-      return;
+    if (trimmed.includes("|")) {
+      const nextLine = lines[index + 1] || "";
+      if (tableRows.length || isTableDivider(nextLine) || isTableDivider(trimmed)) {
+        tableRows.push(trimmed);
+        continue;
+      }
     }
 
-    flushList();
+    const listMatch = /^(\s*)([-*+]|\d+\.)\s+(.+)$/.exec(line);
+    if (listMatch) {
+      flushTable();
+      const indent = listMatch[1].replace(/\t/g, "  ").length;
+      const type = /^\d+\.$/.test(listMatch[2]) ? "ol" : "ul";
 
-    if (trimmed.startsWith("### ")) {
-      html.push(`<h3>${renderInlineMarkdown(trimmed.slice(4))}</h3>`);
-    } else if (trimmed.startsWith("## ")) {
-      html.push(`<h2>${renderInlineMarkdown(trimmed.slice(3))}</h2>`);
-    } else if (trimmed.startsWith("# ")) {
-      html.push(`<h1>${renderInlineMarkdown(trimmed.slice(2))}</h1>`);
+      while (listStack.length && listStack[listStack.length - 1].indent > indent) {
+        html.push(`</${listStack.pop().type}>`);
+      }
+
+      const current = listStack[listStack.length - 1];
+      if (!current || current.indent < indent || current.type !== type) {
+        html.push(`<${type}>`);
+        listStack.push({ indent, type });
+      }
+
+      html.push(`<li>${renderInlineMarkdown(listMatch[3])}</li>`);
+      continue;
+    }
+
+    flushTable();
+    flushLists();
+
+    const heading = getHeading(trimmed);
+    if (heading) {
+      const renderedText = renderInlineMarkdown(heading.text);
+      const id = slugifyHeading(renderedText, usedSlugs);
+      headings.push({ ...heading, id });
+      html.push(`<h${heading.level} id="${id}">${renderedText}</h${heading.level}>`);
+      continue;
+    }
+
+    if (trimmed === "[TOC]") {
+      html.push("[[TOC]]");
+      continue;
+    }
+
+    const renderedLine = renderInlineMarkdown(trimmed);
+    if (/^<\/?p(?:\s|>)|^<img\b|^<br>/i.test(renderedLine)) {
+      html.push(renderedLine);
     } else {
-      html.push(`<p>${renderInlineMarkdown(trimmed)}</p>`);
+      html.push(`<p>${renderedLine}</p>`);
     }
-  });
+  }
 
-  flushList();
-  return html.join("");
+  flushTable();
+  flushLists();
+  return html.join("").replace("[[TOC]]", renderToc(headings));
 }
 
 function injectVideoPlaceholders(html, videos) {
