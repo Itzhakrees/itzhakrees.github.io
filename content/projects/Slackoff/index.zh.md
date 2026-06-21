@@ -2,7 +2,7 @@
 id: "Slackoff"
 lang: "zh"
 status: "published"
-featured: true
+featured: false
 order: 4
 title: "Slack Off"
 role: "玩法设计"

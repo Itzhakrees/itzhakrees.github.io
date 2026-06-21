@@ -107,6 +107,8 @@ date: "2026-05-30"
 | 产出         | 低价值素材, 中少量，低稀有度补给                             |
 | 区域结构     | <img src="img/image 1.png" alt="image 1" style="zoom: 33%;" /> |
 
+**视频演示：**
+
 {{ video bilibili:BV1h1jp6ZErZ title="搜打撤区域关卡白盒演示A3部分" }}
 
 **POI layout**：
@@ -180,6 +182,8 @@ date: "2026-05-30"
 | AI配置要求   | 中数量, 中强度                   |
 | 产出         | 中高价值素材, 中量补给, 精英怪物副本 |
 | 区域结构 | <img src="img/image-20260618172421677.png" alt="image-20260618172421677" style="zoom: 33%;" /> |
+
+**视频演示：**
 
 {{ video bilibili:BV1xZjp6SEuv title="搜打撤区域关卡白盒演示A6部分" }}
 

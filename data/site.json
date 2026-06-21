@@ -1,13 +1,13 @@
 {
   "profile": {
-    "name": "Itzhak Rees",
+    "name": "ItzhakRees",
     "email": "",
     "linkedin": "",
     "resume": ""
   },
   "ui": {
     "en": {
-      "pageTitle": "Itzhak Rees | Game Systems & Level Designer",
+      "pageTitle": "ItzhakRees | Game Systems & Level Designer",
       "skipLink": "Skip to main content",
       "navOpen": "Open navigation",
       "navHome": "Home",
@@ -16,7 +16,7 @@
       "navDesignDocs": "Design Docs",
       "languageToggle": "中文",
       "introEyebrow": "Game design portfolio",
-      "introName": "Itzhak Rees",
+      "introName": "Cenhao Yuan",
       "introRole": "Game Systems & Level Designer",
       "introCopy": "I design readable systems, expressive mechanics, and levels that make player choices feel intentional from the first minute.",
       "introAsideLabel": "Contact and focus",
@@ -42,7 +42,7 @@
       "projectLoadError": "This project article could not be loaded."
     },
     "zh": {
-      "pageTitle": "Itzhak Rees | 游戏系统与关卡设计师",
+      "pageTitle": "ItzhakRees | 游戏系统与关卡设计师",
       "skipLink": "跳到主要内容",
       "navOpen": "打开导航",
       "navHome": "首页",
@@ -51,8 +51,8 @@
       "navDesignDocs": "设计文档",
       "languageToggle": "EN",
       "introEyebrow": "游戏设计作品集",
-      "introName": "Itzhak Rees",
-      "introRole": "游戏系统与关卡设计师",
+      "introName": "袁 涔皓",
+      "introRole": "玩法策划 / 关卡策划",
       "introCopy": "我关注清晰可读的系统、有表达力的机制，以及让玩家选择从第一分钟起就显得有意图的关卡体验。",
       "introAsideLabel": "联系方式与方向",
       "introFocusLabel": "方向",
@@ -60,16 +60,16 @@
       "introEmail": "邮箱",
       "introLinkedin": "LinkedIn",
       "introResume": "简历",
-      "projectsEyebrow": "精选作品",
+      "projectsEyebrow": "个人设计",
       "projectsTitle": "项目",
       "projectsIntro": "为设计负责人准备的紧凑案例：项目是什么、我负责什么，以及完整拆解的位置。",
       "researchEyebrow": "研究",
       "researchTitle": "论文研究",
-      "researchIntro": "研究部分作为设计证据呈现：如何提出问题、评估玩家体验，并把发现转化为可执行的设计选择。",
+      "researchIntro": "针对游戏设计相关方向进行的学术性研究。",
       "docsEyebrow": "文档",
       "docsTitle": "设计文档",
-      "docsIntro": "展示我如何沟通系统、关卡、平衡和可落地的设计意图。",
-      "footerCopyright": "© 2026 Itzhak Rees。游戏设计作品集。",
+      "docsIntro": "",
+      "footerCopyright": "© 2026 ItzhakRees。游戏设计作品集。",
       "footerCredit": "静态作品集结构改编自 MIT 许可的 HTML portfolio 模板。",
       "projectBackLabel": "返回项目",
       "projectLoading": "正在加载项目...",
@@ -78,7 +78,7 @@
     }
   },
   "research": {
-    "href": "#",
+    "href": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5694522",
     "en": {
       "label": "Thesis placeholder",
       "title": "Player Motivation and Feedback in Interactive Systems",
@@ -87,66 +87,34 @@
       "question": "How do feedback structures influence player motivation and decision-making?",
       "methodsLabel": "Methods / design link",
       "methods": "Literature review, comparative analysis, playtest observation.",
-      "linkLabel": "PDF placeholder"
+      "linkLabel": "SSRN Link"
     },
     "zh": {
-      "label": "论文占位",
-      "title": "互动系统中的玩家动机与反馈",
-      "summary": "用于连接学术研究、系统设计、成长节奏和玩家反馈的论文摘要占位。",
+      "label": "游戏系统研究",
+      "title": "不同形式的动态难度调整系统(DDA)如何有效维持玩家心流",
+      "summary": "本文基于Mihaly Csikszentmihalyi和陈星汉的理论成果，探讨了不同形式的DDA如何影响玩家的沉浸感和心流的持续性。通过对不同类型代表性游戏的比较分析，本文指出了传统二元分类（系统驱动型与玩家驱动型）的局限性，并提出了一个基于方向性（积极与消极）和可见性（隐性与显性）两个附加维度的改进型四象限框架。",
       "questionLabel": "问题",
-      "question": "反馈结构如何影响玩家动机和决策？",
+      "question": "不同的DDA在玩家体验上会产生什么效果？",
       "methodsLabel": "方法 / 设计关联",
       "methods": "文献综述、比较分析、Playtest 观察。",
-      "linkLabel": "PDF 占位"
+      "linkLabel": "SSRN链接"
     }
   },
   "designDocs": [
     {
-      "id": "game-design-document",
-      "href": "#",
+      "id": "level-analyze-document",
+      "href": "assets/Arc-Raiders地图设计.pdf",
       "en": {
-        "type": "GDD",
-        "title": "Game Design Document",
-        "summary": "Core pillars, mechanics, loops, and player goals.",
-        "linkLabel": "Document placeholder"
+        "type": "Analysis",
+        "title": "Arc-Raiders level design analysis",
+        "summary": "How Arc-Raiders constructs its space for PVEVP gameplay？",
+        "linkLabel": "Full Document"
       },
       "zh": {
-        "type": "GDD",
-        "title": "游戏设计文档",
-        "summary": "核心支柱、机制、循环和玩家目标。",
-        "linkLabel": "文档占位"
-      }
-    },
-    {
-      "id": "level-blockout-notes",
-      "href": "#",
-      "en": {
-        "type": "Level notes",
-        "title": "Level Blockout Notes",
-        "summary": "Route plans, gates, sightlines, and encounter pacing.",
-        "linkLabel": "Document placeholder"
-      },
-      "zh": {
-        "type": "关卡笔记",
-        "title": "关卡 Blockout 笔记",
-        "summary": "路线规划、门槛、视线和遭遇节奏。",
-        "linkLabel": "文档占位"
-      }
-    },
-    {
-      "id": "balance-sheet-system-specs",
-      "href": "#",
-      "en": {
-        "type": "System specs",
-        "title": "Balance Sheet / System Specs",
-        "summary": "Variables, tuning notes, test cases, and design rationale.",
-        "linkLabel": "Document placeholder"
-      },
-      "zh": {
-        "type": "系统规格",
-        "title": "平衡表 / 系统规格",
-        "summary": "变量、调校笔记、测试用例和设计理由。",
-        "linkLabel": "文档占位"
+        "type": "Analysis",
+        "title": "Arc-Raiders地图设计分析",
+        "summary": "分析Arc-Raiders的地图设计是如何汇聚玩家？如何构建PVEVP玩法的空间？",
+        "linkLabel": "查看全文"
       }
     }
   ]

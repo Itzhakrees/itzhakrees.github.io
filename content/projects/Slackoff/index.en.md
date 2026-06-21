@@ -2,7 +2,7 @@
 id: "Slackoff"
 lang: "en"
 status: "published"
-featured: true
+featured: false
 order: 4
 title: "Slack Off"
 role: "Gameplay design"
