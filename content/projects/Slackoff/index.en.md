@@ -2,18 +2,19 @@
 id: "Slackoff"
 lang: "en"
 status: "published"
-featured: false
-order: 4
+featured: true
+order: 2
 title: "Slack Off"
 role: "Gameplay design"
-summary: "Fast prototype showing theme interpretation, compact teaching, and difficulty ramp."
-description: "Fast prototype showing theme interpretation, compact teaching, and difficulty ramp."
+summary: "A 'slack-off' theme with memory-based gameplay board game."
+description: "A 'slack-off' theme with memory-based gameplay board game."
 # Add a real project cover at ./img/cover.webp, then set cover to "./img/cover.webp".
-cover: "./img/Cover.png"
+cover: "./img/cover.png"
 visualClass: "puzzle-card"
 coverClass: "puzzle-cover"
-tags: ["Puzzle Design","Game Jam","Prototype"]
-tools: ["Unity","Rapid Prototyping"]
-date: "2026-05-10"
+tags: ["Puzzle Design","Prototype"]
+tools: ["Rapid Prototyping"]
+date: "2025-10-15"
 ---
 # TODO
+

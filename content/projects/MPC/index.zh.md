@@ -2,33 +2,30 @@
 id: "MPC"
 lang: "zh"
 status: "draft"
-featured: true
-order: 2
-title: "战斗循环原型"
-role: "玩法 / 系统设计"
-summary: "围绕核心战斗节奏、风险回报调校和清晰反馈建立的原型。"
-description: "围绕核心战斗节奏、风险回报调校和清晰反馈建立的原型。"
+featured: false
+order: 3
+title: "MPC"
+role: "玩法&关卡设计"
+summary: "道具改变敌人NPC行为玩法的走格子解谜游戏"
+description: "道具改变敌人NPC行为玩法的走格子解谜游戏"
 # Add a real project cover at ./img/cover.webp, then set cover to "./img/cover.webp".
-cover: ""
-visualClass: "systems-card"
-coverClass: "systems-cover"
-tags: ["Combat Design","Game Systems","Prototype"]
+cover: "./img/cover.png"
+visualClass: "puzzle-card"
+coverClass: "puzzle-cover"
+tags: ["Puzzle Design","Level Design","Prototype"]
 tools: ["Unity","C#"]
-date: "2026-05-30"
+date: "2026-02-10"
 ---
-# 战斗循环原型
-
 ## 项目概述
 
-这个原型聚焦于紧凑的战斗节奏：读取敌人意图、做出应对承诺，并通过即时反馈解释一次交互为什么成功或失败。
+该项目旨在实践敏捷开发流程的同时，构造最小化文字描述的玩法系统与关卡。
 
 {{ video youtube:M7lc1UVf-VE title="战斗循环原型演示" }}
 
 ## 我的职责
 
-- 定义攻击、闪避、恢复和反击窗口。
-- 调整近距离承诺行为的风险回报。
-- 梳理命中确认、挥空恢复和防御时机的反馈状态。
+- 设计改变敌人行为的道具效果
+- 设计并实现关卡
 
 ## 迭代记录
 
