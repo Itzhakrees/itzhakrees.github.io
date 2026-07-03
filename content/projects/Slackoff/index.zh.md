@@ -4,7 +4,7 @@ id: "Slackoff"
 lang: "zh"
 status: "published"
 featured: true
-order: 2
+order: 3
 title: "Slack Off"
 role: "玩法设计"
 summary: "基于记忆玩法的摸鱼主题桌游"

@@ -115,6 +115,43 @@ window.portfolioContent = {
       }
     },
     {
+      "id": "MPC",
+      "status": "published",
+      "visualClass": "puzzle-card",
+      "coverClass": "puzzle-cover",
+      "cover": "content/projects/MPC/img/Cover.png?v=mpsj2jqd",
+      "href": "projects/MPC/",
+      "contentBase": "content/projects/MPC",
+      "markdownBase": "content/projects/MPC/index",
+      "assetBase": "content/projects/MPC/",
+      "featured": true,
+      "order": 2,
+      "tags": [
+        "Puzzle Design",
+        "Level Design",
+        "Prototype"
+      ],
+      "tools": [
+        "Unity",
+        "C#"
+      ],
+      "date": "2026-02-10",
+      "en": {
+        "ariaLabel": "MPC: TODO.",
+        "role": "Gameplay / Level design",
+        "title": "MPC",
+        "summary": "TODO.",
+        "description": "TODO."
+      },
+      "zh": {
+        "ariaLabel": "MPC: 道具改变敌人NPC行为玩法的走格子解谜游戏",
+        "role": "玩法&关卡设计",
+        "title": "MPC",
+        "summary": "道具改变敌人NPC行为玩法的走格子解谜游戏",
+        "description": "道具改变敌人NPC行为玩法的走格子解谜游戏"
+      }
+    },
+    {
       "id": "Slackoff",
       "status": "published",
       "visualClass": "puzzle-card",
@@ -125,7 +162,7 @@ window.portfolioContent = {
       "markdownBase": "content/projects/Slackoff/index",
       "assetBase": "content/projects/Slackoff/",
       "featured": true,
-      "order": 2,
+      "order": 3,
       "tags": [
         "Puzzle Design",
         "Prototype"

@@ -3,7 +3,7 @@ id: "Slackoff"
 lang: "en"
 status: "published"
 featured: true
-order: 2
+order: 3
 title: "Slack Off"
 role: "Gameplay design"
 summary: "A 'slack-off' theme with memory-based gameplay board game."

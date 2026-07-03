@@ -236,6 +236,12 @@
     #255385;
 }
 
+.project-visual {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .project-content {
   position: relative;
   z-index: 1;
