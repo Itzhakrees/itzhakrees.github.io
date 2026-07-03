@@ -119,15 +119,16 @@ function isExternalUrl(value) {
   return /^https?:\/\//i.test(value);
 }
 
-function normalizeProjectAssetPath(projectId, assetPath) {
+function normalizeProjectAssetPath(projectId, assetPath, assetVersion = "") {
   if (!assetPath) return "";
   if (isExternalUrl(assetPath)) return assetPath;
 
-  return `content/projects/${projectId}/${assetPath.replace(/^\.?\//, "")}`;
+  const normalizedPath = `content/projects/${projectId}/${assetPath.replace(/^\.?\//, "")}`;
+  return assetVersion ? `${normalizedPath}?v=${assetVersion}` : normalizedPath;
 }
 
 async function validateProjectAssetPath(projectId, assetPath, fileName) {
-  if (!assetPath || isExternalUrl(assetPath)) return;
+  if (!assetPath || isExternalUrl(assetPath)) return "";
 
   const segments = assetPath.replace(/^\.?\//, "").split("/");
   let currentDir = path.join(contentDir, projectId);
@@ -142,6 +143,13 @@ async function validateProjectAssetPath(projectId, assetPath, fileName) {
 
     currentDir = path.join(currentDir, exactEntry.name);
   }
+
+  const stat = await fs.stat(currentDir);
+  if (!stat.isFile()) {
+    throw new Error(`${fileName}: asset path "${assetPath}" must point to a file.`);
+  }
+
+  return Math.floor(stat.mtimeMs).toString(36);
 }
 
 function makeLocalizedEntry(primary, fallback) {
@@ -166,7 +174,7 @@ function toProjectEntry(group) {
     status: en.status,
     visualClass: en.visualClass || "",
     coverClass: en.coverClass || "",
-    cover: normalizeProjectAssetPath(en.id, en.cover || ""),
+    cover: normalizeProjectAssetPath(en.id, en.cover || "", en.coverVersion),
     href: `projects/${en.id}/`,
     contentBase: `content/projects/${en.id}`,
     markdownBase: `content/projects/${en.id}/index`,
@@ -200,9 +208,12 @@ async function readProjectMarkdown(projectId, lang) {
   const parsed = parseFrontmatter(source, `${projectId}/${fileName}`);
 
   validateProjectData(parsed.data, `${projectId}/${fileName}`, projectId, lang);
-  await validateProjectAssetPath(projectId, parsed.data.cover, `${projectId}/${fileName}`);
+  const coverVersion = await validateProjectAssetPath(projectId, parsed.data.cover, `${projectId}/${fileName}`);
 
-  return parsed.data;
+  return {
+    ...parsed.data,
+    coverVersion
+  };
 }
 
 async function collectProjects() {
