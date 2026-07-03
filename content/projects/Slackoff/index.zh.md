@@ -70,7 +70,7 @@ date: "2025-10-15"
 
 ---
 
-## 4. 游戏流程（基础版）
+## 4. 游戏流程
 
 <img src="img/Pasted image 20260603142435.png" alt="Pasted image 20260603142435" style="zoom:50%;" />
 

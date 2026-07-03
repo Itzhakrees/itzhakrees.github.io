@@ -119,29 +119,27 @@ window.portfolioContent = {
       "status": "published",
       "visualClass": "puzzle-card",
       "coverClass": "puzzle-cover",
-      "cover": "content/projects/Slackoff/img/Cover.png",
+      "cover": "content/projects/Slackoff/img/cover.png",
       "href": "projects/Slackoff/",
       "contentBase": "content/projects/Slackoff",
       "markdownBase": "content/projects/Slackoff/index",
       "assetBase": "content/projects/Slackoff/",
-      "featured": false,
-      "order": 4,
+      "featured": true,
+      "order": 2,
       "tags": [
         "Puzzle Design",
-        "Game Jam",
         "Prototype"
       ],
       "tools": [
-        "Unity",
         "Rapid Prototyping"
       ],
-      "date": "2026-05-10",
+      "date": "2025-10-15",
       "en": {
-        "ariaLabel": "Slack Off: Fast prototype showing theme interpretation, compact teaching, and difficulty ramp.",
+        "ariaLabel": "Slack Off: A 'slack-off' theme with memory-based gameplay board game.",
         "role": "Gameplay design",
         "title": "Slack Off",
-        "summary": "Fast prototype showing theme interpretation, compact teaching, and difficulty ramp.",
-        "description": "Fast prototype showing theme interpretation, compact teaching, and difficulty ramp."
+        "summary": "A 'slack-off' theme with memory-based gameplay board game.",
+        "description": "A 'slack-off' theme with memory-based gameplay board game."
       },
       "zh": {
         "ariaLabel": "Slack Off: 基于记忆玩法的摸鱼主题桌游",
