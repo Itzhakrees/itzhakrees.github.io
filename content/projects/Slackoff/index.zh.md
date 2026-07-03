@@ -58,7 +58,7 @@ date: "2025-10-15"
 | 积分token           | 标识玩家已有分数             |
 | 顺序flag            | 标识第一个行动玩家的顺序指示物      |
 
-<img src="img/Pasted image 20260603142546.png" alt="Pasted image 20260603142546" style="zoom:80%;" />
+<img src="img/Cards.png" alt="Cards" style="zoom:80%;" />
 
 **游戏板**：
 
