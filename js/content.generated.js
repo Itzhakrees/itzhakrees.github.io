@@ -119,7 +119,7 @@ window.portfolioContent = {
       "status": "published",
       "visualClass": "puzzle-card",
       "coverClass": "puzzle-cover",
-      "cover": "content/projects/Slackoff/img/cover.png",
+      "cover": "content/projects/Slackoff/img/Cover.png",
       "href": "projects/Slackoff/",
       "contentBase": "content/projects/Slackoff",
       "markdownBase": "content/projects/Slackoff/index",
