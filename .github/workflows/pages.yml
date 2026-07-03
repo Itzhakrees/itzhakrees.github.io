@@ -35,8 +35,15 @@ jobs:
         run: |
           rm -rf _site
           mkdir _site
-          cp -R assets content css data img index js projects _site/
-          cp index.html .nojekyll _site/
+          for dir in assets content css data img index js projects; do
+            if [ -d "$dir" ]; then
+              cp -R "$dir" _site/
+            fi
+          done
+          cp index.html _site/
+          if [ -f .nojekyll ]; then
+            cp .nojekyll _site/
+          fi
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v6
