@@ -9,7 +9,7 @@ role: "玩法&关卡设计"
 summary: "道具改变敌人NPC行为玩法的走格子解谜游戏"
 description: "道具改变敌人NPC行为玩法的走格子解谜游戏"
 # Add a real project cover at ./img/cover.webp, then set cover to "./img/cover.webp".
-cover: "./img/Cover.png"
+cover: "./img/cover.png"
 visualClass: "puzzle-card"
 coverClass: "puzzle-cover"
 tags: ["Puzzle Design","Level Design","Prototype"]

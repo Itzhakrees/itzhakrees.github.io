@@ -9,7 +9,7 @@ role: "Gameplay / Level design"
 summary: "TODO."
 description: "TODO."
 # Add a real project cover at ./img/cover.webp, then set cover to "./img/cover.webp".
-cover: "./img/Cover.png"
+cover: "./img/cover.png"
 visualClass: "puzzle-card"
 coverClass: "puzzle-cover"
 tags: ["Puzzle Design","Level Design","Prototype"]

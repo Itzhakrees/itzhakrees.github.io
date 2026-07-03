@@ -119,7 +119,7 @@ window.portfolioContent = {
       "status": "published",
       "visualClass": "puzzle-card",
       "coverClass": "puzzle-cover",
-      "cover": "content/projects/MPC/img/Cover.png?v=mpsj2jqd",
+      "cover": "content/projects/MPC/img/cover.png?v=mpsj2jqd",
       "href": "projects/MPC/",
       "contentBase": "content/projects/MPC",
       "markdownBase": "content/projects/MPC/index",
