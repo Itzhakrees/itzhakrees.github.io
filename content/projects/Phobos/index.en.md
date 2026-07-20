@@ -13,6 +13,7 @@ cover: ""
 visualClass: "systems-card"
 coverClass: "systems-cover"
 tags: ["Combat Design","Game Systems","Prototype"]
+filters: ["Game"]
 tools: ["Unity","C#"]
 date: "2026-05-30"
 ---

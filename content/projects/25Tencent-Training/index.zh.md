@@ -13,6 +13,7 @@ cover: "./img/Cover.png"
 visualClass: "level-card"
 coverClass: "level-card"
 tags: ["Level Design","Gameplay Design","Prototype"]
+filters: ["Game","White Box"]
 tools: ["Unreal Engine 5"]
 date: "2026-05-30"
 ---

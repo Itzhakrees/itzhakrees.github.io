@@ -27,7 +27,9 @@ window.portfolioContent = {
       "introResume": "Resume",
       "projectsEyebrow": "Selected work",
       "projectsTitle": "Project",
-      "projectsIntro": "Compact case-study placeholders for design leads: what the project is, what I owned, and where the full breakdown will live.",
+      "projectsIntro": "Selected games, white-box studies, design documents, and other work.",
+      "projectFiltersLabel": "Filter projects by type",
+      "projectFilterEmpty": "No work in this category yet. More projects will be added here.",
       "researchEyebrow": "Research",
       "researchTitle": "Thesis research",
       "researchIntro": "Research is presented as design evidence: how I frame questions, evaluate player experience, and translate findings into practical design choices.",
@@ -62,7 +64,9 @@ window.portfolioContent = {
       "introResume": "简历",
       "projectsEyebrow": "个人设计",
       "projectsTitle": "项目",
-      "projectsIntro": "为设计负责人准备的紧凑案例：项目是什么、我负责什么，以及完整拆解的位置。",
+      "projectsIntro": "游戏、白盒关卡、设计文档及其他设计作品。",
+      "projectFiltersLabel": "按类型筛选项目",
+      "projectFilterEmpty": "该分类暂时没有内容，后续项目将会在这里展示。",
       "researchEyebrow": "研究",
       "researchTitle": "论文研究",
       "researchIntro": "针对游戏设计相关方向进行的学术性研究。",
@@ -94,6 +98,10 @@ window.portfolioContent = {
         "Level Design",
         "Gameplay Design",
         "Prototype"
+      ],
+      "filters": [
+        "Game",
+        "White Box"
       ],
       "tools": [
         "Unreal Engine 5"
@@ -131,6 +139,9 @@ window.portfolioContent = {
         "Level Design",
         "Prototype"
       ],
+      "filters": [
+        "Game"
+      ],
       "tools": [
         "Unity",
         "C#"
@@ -166,6 +177,9 @@ window.portfolioContent = {
       "tags": [
         "Puzzle Design",
         "Prototype"
+      ],
+      "filters": [
+        "Game"
       ],
       "tools": [
         "Rapid Prototyping"
@@ -214,6 +228,9 @@ window.portfolioContent = {
     {
       "id": "level-analyze-document",
       "href": "assets/Arc-Raiders地图设计.pdf",
+      "filters": [
+        "Document"
+      ],
       "en": {
         "type": "Analysis",
         "title": "Arc-Raiders level design analysis",

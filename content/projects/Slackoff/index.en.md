@@ -13,6 +13,7 @@ cover: "./img/Cover.png"
 visualClass: "puzzle-card"
 coverClass: "puzzle-cover"
 tags: ["Puzzle Design","Prototype"]
+filters: ["Game"]
 tools: ["Rapid Prototyping"]
 date: "2025-10-15"
 ---

@@ -10,6 +10,7 @@ const outputJsPath = path.join(rootDir, "js", "content.generated.js");
 const projectsOutputDir = path.join(rootDir, "projects");
 const supportedLanguages = ["en", "zh"];
 const statuses = new Set(["published", "draft", "archived"]);
+const projectFilters = new Set(["Game", "White Box", "Document", "Other"]);
 
 function parseScalar(value, fileName, key) {
   const trimmed = value.trim();
@@ -80,6 +81,7 @@ function validateProjectData(data, fileName, expectedProjectId, expectedLang) {
     "visualClass",
     "coverClass",
     "tags",
+    "filters",
     "tools",
     "date"
   ];
@@ -104,6 +106,15 @@ function validateProjectData(data, fileName, expectedProjectId, expectedLang) {
 
   if (!Array.isArray(data.tags)) {
     throw new Error(`${fileName}: tags must be an array.`);
+  }
+
+  if (!Array.isArray(data.filters) || !data.filters.length) {
+    throw new Error(`${fileName}: filters must be a non-empty array.`);
+  }
+
+  const invalidFilter = data.filters.find((filter) => !projectFilters.has(filter));
+  if (invalidFilter) {
+    throw new Error(`${fileName}: unsupported project filter "${invalidFilter}".`);
   }
 
   if (!Array.isArray(data.tools)) {
@@ -182,6 +193,7 @@ function toProjectEntry(group) {
     featured: en.featured !== false,
     order: Number(en.order || 999),
     tags: en.tags || [],
+    filters: en.filters || ["Game"],
     tools: en.tools || [],
     date: en.date || "",
     en: makeLocalizedEntry(en, zh),
@@ -238,6 +250,10 @@ async function collectProjects() {
 
     if (group.en.status !== group.zh.status) {
       throw new Error(`${projectId}: English and Chinese statuses must match.`);
+    }
+
+    if (JSON.stringify(group.en.filters) !== JSON.stringify(group.zh.filters)) {
+      throw new Error(`${projectId}: English and Chinese filters must match.`);
     }
 
     if (group.en.status === "published") {

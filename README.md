@@ -39,6 +39,7 @@ cover: ""
 visualClass: ""
 coverClass: ""
 tags: []
+filters: ["Game"]
 tools: []
 date: "2026-01-01"
 ---

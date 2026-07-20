@@ -14,6 +14,7 @@ cover: "./img/Cover.png"
 visualClass: "puzzle-card"
 coverClass: "puzzle-cover"
 tags: ["Game-play Design","Prototype"]
+filters: ["Game"]
 tools: ["Rapid Prototyping"]
 date: "2025-10-15"
 ---
@@ -147,4 +148,3 @@ date: "2025-10-15"
 - **美术**：原创艺术设计
 - **视觉效果**：提升整体视觉表现
 - **无障碍设计**：针对色盲玩家的卡牌标识优化（例如使用符号+颜色双编码）
-

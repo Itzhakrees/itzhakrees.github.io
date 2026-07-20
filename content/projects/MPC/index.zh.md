@@ -13,6 +13,7 @@ cover: "./img/cover.png"
 visualClass: "puzzle-card"
 coverClass: "puzzle-cover"
 tags: ["Puzzle Design","Level Design","Prototype"]
+filters: ["Game"]
 tools: ["Unity","C#"]
 date: "2026-02-10"
 ---

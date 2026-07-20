@@ -16,7 +16,7 @@
     />
     <link rel="icon" href="data:," />
     <link rel="stylesheet" href="css/utilities.css" />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style.css?v=20260718-project-filters" />
   </head>
   <body>
     <a class="skip-link" href="#main" data-i18n="skipLink"></a>
@@ -44,7 +44,6 @@
         <div class="nav-menu" id="primary-menu">
           <a href="#projects" data-i18n="navProjects"></a>
           <a href="#research" data-i18n="navResearch"></a>
-          <a href="#design-docs" data-i18n="navDesignDocs"></a>
           <button class="language-toggle" type="button" data-language-toggle aria-pressed="false"></button>
         </div>
       </nav>
@@ -81,7 +80,9 @@
             <p data-i18n="projectsIntro"></p>
           </div>
 
+          <div class="project-filters" data-project-filters role="group"></div>
           <div class="project-grid" data-projects></div>
+          <p class="project-empty" data-project-empty role="status" hidden></p>
         </div>
       </section>
 
@@ -97,17 +98,7 @@
         </div>
       </section>
 
-      <section class="section docs-section" id="design-docs">
-        <div class="container">
-          <div class="section-heading">
-            <p class="eyebrow" data-i18n="docsEyebrow"></p>
-            <h2 data-i18n="docsTitle"></h2>
-            <p data-i18n="docsIntro"></p>
-          </div>
-
-          <div class="docs-grid" data-design-docs></div>
-        </div>
-      </section>
+      <!-- Future portfolio sections can be added here. -->
     </main>
 
     <footer class="site-footer">
@@ -117,7 +108,7 @@
       </div>
     </footer>
 
-    <script src="js/content.generated.js?v=20260703-cover-cache"></script>
-    <script src="js/script.js"></script>
+    <script src="js/content.generated.js?v=20260718-project-filters"></script>
+    <script src="js/script.js?v=20260718-project-filters"></script>
   </body>
 </html>
