@@ -279,10 +279,7 @@ function injectVideoPlaceholders(html, videos) {
 
 function renderMarkdown(markdown) {
   const { source, videos } = extractVideoShortcodes(markdown);
-  const canUseMarkdownLibrary = window.marked && window.DOMPurify;
-  const unsafeHtml = canUseMarkdownLibrary ? window.marked.parse(source) : renderBasicMarkdown(source);
-  const safeHtml = canUseMarkdownLibrary ? window.DOMPurify.sanitize(unsafeHtml) : unsafeHtml;
-  return injectVideoPlaceholders(safeHtml, videos);
+  return injectVideoPlaceholders(renderBasicMarkdown(source), videos);
 }
 
 function stripFrontmatter(markdown) {

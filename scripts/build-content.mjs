@@ -182,7 +182,6 @@ function toProjectEntry(group) {
 
   return {
     id: en.id,
-    status: en.status,
     visualClass: en.visualClass || "",
     coverClass: en.coverClass || "",
     cover: normalizeProjectAssetPath(en.id, en.cover || "", en.coverVersion),

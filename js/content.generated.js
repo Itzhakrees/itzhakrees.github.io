@@ -84,7 +84,6 @@ window.portfolioContent = {
   "projects": [
     {
       "id": "25Tencent-Training",
-      "status": "published",
       "visualClass": "level-card",
       "coverClass": "level-card",
       "cover": "content/projects/25Tencent-Training/img/Cover.png?v=mqj7u3es",
@@ -124,7 +123,6 @@ window.portfolioContent = {
     },
     {
       "id": "MPC",
-      "status": "published",
       "visualClass": "puzzle-card",
       "coverClass": "puzzle-cover",
       "cover": "content/projects/MPC/img/cover.png?v=mpsj2jqd",
@@ -164,7 +162,6 @@ window.portfolioContent = {
     },
     {
       "id": "Slackoff",
-      "status": "published",
       "visualClass": "puzzle-card",
       "coverClass": "puzzle-cover",
       "cover": "content/projects/Slackoff/img/Cover.png?v=mqnvkav7",
