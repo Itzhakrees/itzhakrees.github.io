@@ -13,7 +13,7 @@
     />
     <link rel="icon" href="data:," />
     <link rel="stylesheet" href="../../css/utilities.css" />
-    <link rel="stylesheet" href="../../css/style.css" />
+    <link rel="stylesheet" href="../../css/style.css?v=20260811-toc-sidebar" />
   </head>
   <body data-project-id="MPC">
     <a class="skip-link" href="#main" data-i18n="skipLink"></a>
@@ -41,11 +41,37 @@
         <div class="nav-menu" id="primary-menu">
           <a href="../../index.html#projects" data-i18n="navProjects"></a>
           <a href="../../index.html#research" data-i18n="navResearch"></a>
-          <a href="../../index.html#design-docs" data-i18n="navDesignDocs"></a>
           <button class="language-toggle" type="button" data-language-toggle aria-pressed="false"></button>
         </div>
       </nav>
     </header>
+
+    <button
+      class="project-toc-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="project-toc"
+      data-project-toc-toggle
+      hidden
+    >
+      <span class="project-toc-toggle-icon" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
+      <span data-project-toc-toggle-label></span>
+    </button>
+
+    <aside
+      class="project-toc-sidebar"
+      id="project-toc"
+      aria-hidden="true"
+      data-project-toc
+      hidden
+    >
+      <p class="project-toc-title" data-i18n="tocTitle"></p>
+      <div class="project-toc-content" data-project-toc-content></div>
+    </aside>
 
     <main id="main" data-project-page>
       <section class="project-hero section">
@@ -64,7 +90,18 @@
       </section>
     </main>
 
-    <script src="../../js/content.generated.js?v=20260703-cover-cache"></script>
-    <script src="../../js/project.js?v=20260722-basic-markdown"></script>
+    <button
+      class="back-to-top"
+      type="button"
+      aria-hidden="true"
+      tabindex="-1"
+      data-back-to-top
+      data-i18n-aria-label="backToTop"
+    >
+      <span aria-hidden="true">↑</span>
+    </button>
+
+    <script src="../../js/content.generated.js?v=20260811-toc-controls"></script>
+    <script src="../../js/project.js?v=20260811-toc-sidebar"></script>
   </body>
 </html>

@@ -41,7 +41,11 @@ window.portfolioContent = {
       "projectBackLabel": "Back to projects",
       "projectLoading": "Loading project...",
       "projectNotFound": "Project not found.",
-      "projectLoadError": "This project article could not be loaded."
+      "projectLoadError": "This project article could not be loaded.",
+      "tocTitle": "On this page",
+      "tocOpen": "Open contents",
+      "tocClose": "Close contents",
+      "backToTop": "Back to top"
     },
     "zh": {
       "pageTitle": "ItzhakRees | 游戏系统与关卡设计师",
@@ -78,7 +82,11 @@ window.portfolioContent = {
       "projectBackLabel": "返回项目",
       "projectLoading": "正在加载项目...",
       "projectNotFound": "未找到项目。",
-      "projectLoadError": "无法加载这个项目文章。"
+      "projectLoadError": "无法加载这个项目文章。",
+      "tocTitle": "本文目录",
+      "tocOpen": "展开目录",
+      "tocClose": "收起目录",
+      "backToTop": "返回顶部"
     }
   },
   "projects": [
@@ -195,6 +203,45 @@ window.portfolioContent = {
         "title": "Slack Off",
         "summary": "基于记忆玩法的摸鱼主题桌游",
         "description": "基于记忆玩法的摸鱼主题桌游"
+      }
+    },
+    {
+      "id": "IrisAndTheGiantAnalysis",
+      "visualClass": "level-card",
+      "coverClass": "level-card",
+      "cover": "content/projects/IrisAndTheGiantAnalysis/img/Cover.jpg?v=mq5ccjy6",
+      "href": "projects/IrisAndTheGiantAnalysis/",
+      "contentBase": "content/projects/IrisAndTheGiantAnalysis",
+      "markdownBase": "content/projects/IrisAndTheGiantAnalysis/index",
+      "assetBase": "content/projects/IrisAndTheGiantAnalysis/",
+      "featured": true,
+      "order": 4,
+      "tags": [
+        "Level Design",
+        "Gameplay Design",
+        "Prototype"
+      ],
+      "filters": [
+        "Game",
+        "White Box"
+      ],
+      "tools": [
+        "Unreal Engine 5"
+      ],
+      "date": "2026-05-30",
+      "en": {
+        "ariaLabel": "Analysis: Document",
+        "role": "Analizer",
+        "title": "Analysis",
+        "summary": "Document",
+        "description": "Analysis report of Iris and the giant"
+      },
+      "zh": {
+        "ariaLabel": "Analysis: Document",
+        "role": "Analizer",
+        "title": "Analysis",
+        "summary": "Document",
+        "description": "Analysis report of Iris and the giant"
       }
     }
   ],

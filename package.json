@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "build": "node scripts/build-content.mjs",
-    "dev": "npm run build && npx serve ."
+    "dev": "npm run build && npx serve .",
+    "test": "node tests/project-markdown.test.mjs"
   },
   "devDependencies": {
     "serve": "^14.2.4"

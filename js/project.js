@@ -9,9 +9,17 @@ const projectRole = document.querySelector("[data-project-role]");
 const projectTitle = document.querySelector("[data-project-title]");
 const projectSummary = document.querySelector("[data-project-summary]");
 const projectArticle = document.querySelector("[data-project-article]");
+const projectToc = document.querySelector("[data-project-toc]");
+const projectTocContent = document.querySelector("[data-project-toc-content]");
+const projectTocToggle = document.querySelector("[data-project-toc-toggle]");
+const projectTocToggleLabel = document.querySelector("[data-project-toc-toggle-label]");
+const backToTop = document.querySelector("[data-back-to-top]");
+const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
 
 let currentLanguage = localStorage.getItem("portfolioLanguage") || "zh";
 let currentRequest = 0;
+let isProjectTocOpen = false;
+let scrollUpdatePending = false;
 
 function getLocalizedContent(item, language) {
   return item[language] || item.en;
@@ -104,6 +112,12 @@ function parseAttributes(source, allowedAttributes) {
 
 function restoreAllowedHtml(source) {
   let output = source;
+  output = output.replace(/&lt;(\/?)div\b([\s\S]*?)&gt;/gi, (_, slash, attrs) => {
+    if (slash) return "</div>";
+    const safeAttrs = parseAttributes(attrs, ["class", "style", "role", "aria-label"]);
+    return `<div${safeAttrs}>`;
+  });
+
   output = output.replace(/&lt;(\/?)p\b([\s\S]*?)&gt;/gi, (_, slash, attrs) => {
     if (slash) return "</p>";
     const safeAttrs = parseAttributes(attrs, ["align"]);
@@ -156,7 +170,7 @@ function renderTable(rows) {
 
 function renderToc(headings) {
   const tocItems = headings
-    .filter((heading) => heading.level >= 2 && heading.level <= 4)
+    .filter((heading) => heading.level >= 1 && heading.level <= 4)
     .map((heading) => (
       `<li class="toc-level-${heading.level}"><a href="#${heading.id}">${renderInlineMarkdown(heading.text)}</a></li>`
     ))
@@ -243,13 +257,13 @@ function renderBasicMarkdown(markdown) {
       continue;
     }
 
-    if (trimmed === "[TOC]") {
+    if (/^\[toc\]$/i.test(trimmed)) {
       html.push("[[TOC]]");
       continue;
     }
 
     const renderedLine = renderInlineMarkdown(trimmed);
-    if (/^<\/?p(?:\s|>)|^<img\b|^<br>/i.test(renderedLine)) {
+    if (/^<\/?(?:div|p)(?:\s|>)|^<img\b|^<br>/i.test(renderedLine)) {
       html.push(renderedLine);
     } else {
       html.push(`<p>${renderedLine}</p>`);
@@ -258,7 +272,7 @@ function renderBasicMarkdown(markdown) {
 
   flushTable();
   flushLists();
-  return html.join("").replace("[[TOC]]", renderToc(headings));
+  return html.join("").replaceAll("[[TOC]]", renderToc(headings));
 }
 
 function injectVideoPlaceholders(html, videos) {
@@ -350,6 +364,83 @@ function hydrateVideoEmbeds(container) {
   });
 }
 
+function getUiDictionary(language = currentLanguage) {
+  return window.portfolioContent.ui[language] || window.portfolioContent.ui.en;
+}
+
+function updateProjectControlsCopy() {
+  const dictionary = getUiDictionary();
+  const tocToggleText = isProjectTocOpen ? dictionary.tocClose : dictionary.tocOpen;
+
+  projectTocToggleLabel.textContent = tocToggleText;
+  projectTocToggle.setAttribute("aria-label", tocToggleText);
+  projectTocToggle.title = tocToggleText;
+  projectToc.setAttribute("aria-label", dictionary.tocTitle);
+  backToTop.setAttribute("aria-label", dictionary.backToTop);
+  backToTop.title = dictionary.backToTop;
+
+  const tocNav = projectTocContent.querySelector(".markdown-toc");
+  if (tocNav) {
+    tocNav.setAttribute("aria-label", dictionary.tocTitle);
+  }
+}
+
+function setProjectTocOpen(isOpen, shouldFocusToggle = false) {
+  isProjectTocOpen = Boolean(isOpen);
+  document.body.classList.toggle("toc-is-open", isProjectTocOpen);
+  projectToc.classList.toggle("is-open", isProjectTocOpen);
+  projectTocToggle.classList.toggle("is-open", isProjectTocOpen);
+  projectTocToggle.setAttribute("aria-expanded", String(isProjectTocOpen));
+  projectToc.setAttribute("aria-hidden", String(!isProjectTocOpen));
+  updateProjectControlsCopy();
+
+  if (shouldFocusToggle) {
+    projectTocToggle.focus();
+  }
+}
+
+function setProjectTocAvailable(isAvailable) {
+  if (!isAvailable) {
+    setProjectTocOpen(false);
+  }
+
+  projectTocToggle.hidden = !isAvailable;
+  projectToc.hidden = !isAvailable;
+}
+
+function resetProjectToc() {
+  projectTocContent.replaceChildren();
+  setProjectTocAvailable(false);
+}
+
+function mountProjectToc(container) {
+  const toc = container.querySelector(".markdown-toc");
+  projectTocContent.replaceChildren();
+
+  if (!toc) {
+    setProjectTocAvailable(false);
+    return;
+  }
+
+  projectTocContent.append(toc);
+  setProjectTocAvailable(true);
+  updateProjectControlsCopy();
+}
+
+function updateBackToTopVisibility() {
+  const isVisible = window.scrollY > 480;
+  backToTop.classList.toggle("is-visible", isVisible);
+  backToTop.setAttribute("aria-hidden", String(!isVisible));
+  backToTop.tabIndex = isVisible ? 0 : -1;
+  scrollUpdatePending = false;
+}
+
+function requestBackToTopVisibilityUpdate() {
+  if (scrollUpdatePending) return;
+  scrollUpdatePending = true;
+  window.requestAnimationFrame(updateBackToTopVisibility);
+}
+
 async function loadProjectArticle(project, language) {
   const dictionary = window.portfolioContent.ui[language] || window.portfolioContent.ui.en;
   const requestId = ++currentRequest;
@@ -357,6 +448,7 @@ async function loadProjectArticle(project, language) {
 
   projectArticle.classList.add("is-loading");
   projectArticle.textContent = dictionary.projectLoading;
+  resetProjectToc();
 
   try {
     const response = await fetch(markdownUrl);
@@ -370,6 +462,7 @@ async function loadProjectArticle(project, language) {
     projectArticle.innerHTML = renderMarkdown(markdown);
     rewriteMarkdownAssetUrls(projectArticle, project);
     hydrateVideoEmbeds(projectArticle);
+    mountProjectToc(projectArticle);
   } catch (error) {
     if (requestId !== currentRequest) return;
     projectArticle.textContent = dictionary.projectLoadError;
@@ -385,6 +478,7 @@ function renderProject(language) {
   const dictionary = window.portfolioContent.ui[language] || window.portfolioContent.ui.en;
 
   if (!project) {
+    resetProjectToc();
     projectPage.classList.add("is-missing");
     projectTitle.textContent = dictionary.projectNotFound;
     projectSummary.textContent = "";
@@ -424,6 +518,7 @@ function applyLanguage(language) {
   languageToggle.setAttribute("aria-pressed", String(language === "zh"));
   localStorage.setItem("portfolioLanguage", language);
   currentLanguage = language;
+  updateProjectControlsCopy();
   renderProject(language);
 }
 
@@ -434,6 +529,10 @@ languageToggle.addEventListener("click", () => {
 navToggle.addEventListener("click", () => {
   const isOpen = navMenu.classList.toggle("is-open");
   navToggle.setAttribute("aria-expanded", String(isOpen));
+
+  if (isOpen) {
+    setProjectTocOpen(false);
+  }
 });
 
 navMenu.addEventListener("click", (event) => {
@@ -443,4 +542,37 @@ navMenu.addEventListener("click", (event) => {
   }
 });
 
+projectTocToggle.addEventListener("click", () => {
+  const willOpen = !isProjectTocOpen;
+
+  if (willOpen) {
+    navMenu.classList.remove("is-open");
+    navToggle.setAttribute("aria-expanded", "false");
+  }
+
+  setProjectTocOpen(willOpen);
+});
+
+projectTocContent.addEventListener("click", (event) => {
+  if (event.target.closest("a") && window.matchMedia("(max-width: 980px)").matches) {
+    setProjectTocOpen(false);
+  }
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && isProjectTocOpen) {
+    setProjectTocOpen(false, true);
+  }
+});
+
+backToTop.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: reducedMotionQuery.matches ? "auto" : "smooth",
+  });
+});
+
+window.addEventListener("scroll", requestBackToTopVisibilityUpdate, { passive: true });
+
 applyLanguage(currentLanguage);
+updateBackToTopVisibility();

@@ -41,7 +41,11 @@
       "projectBackLabel": "Back to projects",
       "projectLoading": "Loading project...",
       "projectNotFound": "Project not found.",
-      "projectLoadError": "This project article could not be loaded."
+      "projectLoadError": "This project article could not be loaded.",
+      "tocTitle": "On this page",
+      "tocOpen": "Open contents",
+      "tocClose": "Close contents",
+      "backToTop": "Back to top"
     },
     "zh": {
       "pageTitle": "ItzhakRees | 游戏系统与关卡设计师",
@@ -78,7 +82,11 @@
       "projectBackLabel": "返回项目",
       "projectLoading": "正在加载项目...",
       "projectNotFound": "未找到项目。",
-      "projectLoadError": "无法加载这个项目文章。"
+      "projectLoadError": "无法加载这个项目文章。",
+      "tocTitle": "本文目录",
+      "tocOpen": "展开目录",
+      "tocClose": "收起目录",
+      "backToTop": "返回顶部"
     }
   },
   "research": {
