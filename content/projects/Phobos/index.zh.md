@@ -1,42 +1,68 @@
 ---
 id: "Phobos"
 lang: "zh"
-status: "draft"
+status: "published"
 featured: true
 order: 2
-title: "战斗循环原型"
-role: "玩法 / 系统设计"
-summary: "围绕核心战斗节奏、风险回报调校和清晰反馈建立的原型。"
-description: "围绕核心战斗节奏、风险回报调校和清晰反馈建立的原型。"
+title: "Phobos"
+role: "玩法 / 系统设计 / 文案"
+summary: "轻策略太空恐怖avg, SpookyJam 2025 最佳主题奖"
 # Add a real project cover at ./img/cover.webp, then set cover to "./img/cover.webp".
-cover: ""
+cover: "./img/cover.jpg"
 visualClass: "systems-card"
 coverClass: "systems-cover"
-tags: ["Combat Design","Game Systems","Prototype"]
+tags: ["System Design","Gameplay Systems","GameJam"]
 filters: ["Game"]
-tools: ["Unity","C#"]
-date: "2026-05-30"
+tools: ["Unity","C#","Agent Coding"]
+date: "2025-10-19"
 ---
-# 战斗循环原型
 
-## 项目概述
+[TOC]
 
-这个原型聚焦于紧凑的战斗节奏：读取敌人意图、做出应对承诺，并通过即时反馈解释一次交互为什么成功或失败。
+# 0.项目概述
 
-{{ video youtube:M7lc1UVf-VE title="战斗循环原型演示" }}
+- 项目性质：48h Game Jam
+- 游戏类型：轻策略Avg
+- GameJam主题：Cosmic horror
+  - 确立体验：克氏、未知、恐怖、叙事导向
+- 游戏简介：一艘载有七人的飞船因不明原因坠毁在一颗荒凉的星球上。幸运的是，星球上似乎有很多可以用来修复飞船的资源。然而，随着探索的深入，由于某种未知因素的影响，船员们的精神状态逐渐变得不稳定。他们能否成功修复飞船并安全离开？还是会陷入疯狂，最终化作这颗荒凉星球残骸的一部分？
+- 游玩链接：https://itzhakrees.itch.io/phobos
 
-## 我的职责
+# 1.项目职责
 
-- 定义攻击、闪避、恢复和反击窗口。
-- 调整近距离承诺行为的风险回报。
-- 梳理命中确认、挥空恢复和防御时机的反馈状态。
+- 基于太空恐怖的主题，构建故事世界观
+- 设计轻策略资源管理玩法，设计基础交互逻辑
+- 撰写文案
 
-## 迭代记录
+# 2.玩法设计
 
-最重要的设计目标是在压力下保持可读性。原型刻意减少操作动词，强化动画预兆，并让每次失败都能被玩家理解，同时不打断战斗流。
+## 2.1核心循环：
 
-## 下一步改进
+![image-20260811221509527](img/image-20260811221509527.png)
 
-- 添加第二类敌人，用于测试循环是否能适配不同节奏。
-- 制作一段短教学遭遇，在伤害压力前先教授站位。
-- 对比玩家录像与预期决策点。
+游戏按照天数进行，玩家每天从最多4个事件选项中选择，消耗当日可用船员执行；事件每次选择之后会影响玩家 `飞船的修理度`、玩家`船员的san值`和玩家`最大可用船员数`，玩家每次执行事件后会收到本次探索事件的结果；当无可用船员时，玩家结束该天；新一天开始时玩家会收到本日简报；
+
+## 2.3 系统设计点：
+
+**数值对玩家不可见：**
+
+- 满足体验：未知、恐怖
+- 设计内容：
+  - 飞船修理度不可见：玩家仅能从飞船冒烟/火焰特效、破损玻璃等特征判断飞船修理程度
+  - San值不可见：玩家无法量化船员San值，只能从场景变化组件中出现的异状、每日船长日志的文字描述和事件触发时的音效判断
+
+<div style="display: flex; justify-content: space-evenly; align-items: center; width: 100%;">
+  <img src="img/image-20260811215455372.png" alt="主菜单" style="height: 300px;">
+  <img src="img/image-20260811223813581.png" alt="世界变化" style="height: 300px;">
+  <img src="img/image-20260811224529290.png" alt="世界变化" style="height: 300px;">
+</div>
+**事件触发多种cg：**
+
+- 满足体验：恐怖、叙事导向
+- 设计点：事件产生的正负面影响会伴随不同的音效提示
+
+<div style="display: flex; justify-content: space-evenly; align-items: center; width: 100%;">
+  <img src="img/image-20260811224249152.png" alt="主菜单" style="height: 300px;">
+  <img src="img/image-20260811224218278.png" alt="世界变化" style="height: 300px;">
+  <img src="img/image-20260811224233746.png" alt="世界变化" style="height: 300px;">
+</div>

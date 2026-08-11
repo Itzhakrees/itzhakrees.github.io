@@ -76,7 +76,6 @@ function validateProjectData(data, fileName, expectedProjectId, expectedLang) {
     "title",
     "role",
     "summary",
-    "description",
     "cover",
     "visualClass",
     "coverClass",
@@ -171,8 +170,7 @@ function makeLocalizedEntry(primary, fallback) {
     ariaLabel: `${title}: ${summary}`,
     role: primary.role || fallback.role || "",
     title,
-    summary,
-    description: primary.description || summary || fallback.description || fallback.summary || ""
+    summary
   };
 }
 
@@ -299,7 +297,7 @@ async function generateProjectPages(projects) {
     const html = template
       .replaceAll("{{PROJECT_ID}}", escapeHtml(project.id))
       .replaceAll("{{PROJECT_TITLE}}", escapeHtml(project.en.title))
-      .replaceAll("{{PROJECT_DESCRIPTION}}", escapeHtml(project.en.description));
+      .replaceAll("{{PROJECT_SUMMARY}}", escapeHtml(project.en.summary));
 
     await fs.writeFile(path.join(outputDir, "index.html"), html, "utf8");
   }

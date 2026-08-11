@@ -33,7 +33,6 @@ order: 1
 title: ""
 role: ""
 summary: ""
-description: ""
 # Add a real project cover at ./img/cover.webp, then set cover to "./img/cover.webp".
 cover: ""
 visualClass: ""

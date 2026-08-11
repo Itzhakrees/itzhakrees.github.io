@@ -118,15 +118,51 @@ window.portfolioContent = {
         "ariaLabel": "tencent: levels",
         "role": "Level & gameplay Designer ",
         "title": "tencent",
-        "summary": "levels",
-        "description": "levels"
+        "summary": "levels"
       },
       "zh": {
         "ariaLabel": "中式恐怖搜打撤关卡: 以贪婪为特色玩法的中式摸金风格搜打撤关卡",
         "role": "关卡 & 玩法设计",
         "title": "中式恐怖搜打撤关卡",
-        "summary": "以贪婪为特色玩法的中式摸金风格搜打撤关卡",
-        "description": "以贪婪为特色玩法的中式摸金风格搜打撤关卡"
+        "summary": "以贪婪为特色玩法的中式摸金风格搜打撤关卡"
+      }
+    },
+    {
+      "id": "Phobos",
+      "visualClass": "systems-card",
+      "coverClass": "systems-cover",
+      "cover": "content/projects/Phobos/img/cover.jpg?v=msoou7a2",
+      "href": "projects/Phobos/",
+      "contentBase": "content/projects/Phobos",
+      "markdownBase": "content/projects/Phobos/index",
+      "assetBase": "content/projects/Phobos/",
+      "featured": true,
+      "order": 2,
+      "tags": [
+        "System Design",
+        "Gameplay Systems",
+        "GameJam"
+      ],
+      "filters": [
+        "Game"
+      ],
+      "tools": [
+        "Unity",
+        "C#",
+        "AgentCoding"
+      ],
+      "date": "2025-10-19",
+      "en": {
+        "ariaLabel": "Gameplay Design / Writer: Core combat rhythm prototype focused on risk-reward tuning and readable feedback.",
+        "role": "Gameplay / systems design",
+        "title": "Gameplay Design / Writer",
+        "summary": "Core combat rhythm prototype focused on risk-reward tuning and readable feedback."
+      },
+      "zh": {
+        "ariaLabel": "Phobos: 轻策略太空恐怖avg, SpookyJam 2025 最佳主题奖",
+        "role": "玩法 / 系统设计 / 文案",
+        "title": "Phobos",
+        "summary": "轻策略太空恐怖avg, SpookyJam 2025 最佳主题奖"
       }
     },
     {
@@ -139,7 +175,7 @@ window.portfolioContent = {
       "markdownBase": "content/projects/MPC/index",
       "assetBase": "content/projects/MPC/",
       "featured": true,
-      "order": 2,
+      "order": 3,
       "tags": [
         "Puzzle Design",
         "Level Design",
@@ -157,15 +193,13 @@ window.portfolioContent = {
         "ariaLabel": "MPC: TODO.",
         "role": "Gameplay / Level design",
         "title": "MPC",
-        "summary": "TODO.",
-        "description": "TODO."
+        "summary": "TODO."
       },
       "zh": {
         "ariaLabel": "MPC: 道具改变敌人NPC行为玩法的走格子解谜游戏",
         "role": "玩法&关卡设计",
         "title": "MPC",
-        "summary": "道具改变敌人NPC行为玩法的走格子解谜游戏",
-        "description": "道具改变敌人NPC行为玩法的走格子解谜游戏"
+        "summary": "道具改变敌人NPC行为玩法的走格子解谜游戏"
       }
     },
     {
@@ -178,7 +212,7 @@ window.portfolioContent = {
       "markdownBase": "content/projects/Slackoff/index",
       "assetBase": "content/projects/Slackoff/",
       "featured": true,
-      "order": 3,
+      "order": 4,
       "tags": [
         "Puzzle Design",
         "Prototype"
@@ -194,15 +228,13 @@ window.portfolioContent = {
         "ariaLabel": "Slack Off: A 'slack-off' theme with memory-based gameplay board game.",
         "role": "Gameplay design",
         "title": "Slack Off",
-        "summary": "A 'slack-off' theme with memory-based gameplay board game.",
-        "description": "A 'slack-off' theme with memory-based gameplay board game."
+        "summary": "A 'slack-off' theme with memory-based gameplay board game."
       },
       "zh": {
         "ariaLabel": "Slack Off: 基于记忆玩法的摸鱼主题桌游",
         "role": "玩法设计",
         "title": "Slack Off",
-        "summary": "基于记忆玩法的摸鱼主题桌游",
-        "description": "基于记忆玩法的摸鱼主题桌游"
+        "summary": "基于记忆玩法的摸鱼主题桌游"
       }
     },
     {
@@ -215,33 +247,27 @@ window.portfolioContent = {
       "markdownBase": "content/projects/IrisAndTheGiantAnalysis/index",
       "assetBase": "content/projects/IrisAndTheGiantAnalysis/",
       "featured": true,
-      "order": 4,
+      "order": 5,
       "tags": [
-        "Level Design",
-        "Gameplay Design",
-        "Prototype"
+        "Gameplay System Analysis",
+        "UI Analysis"
       ],
       "filters": [
-        "Game",
-        "White Box"
+        "Document"
       ],
-      "tools": [
-        "Unreal Engine 5"
-      ],
-      "date": "2026-05-30",
+      "tools": [],
+      "date": "2026-07-30",
       "en": {
-        "ariaLabel": "Analysis: Document",
+        "ariaLabel": "Analysis report of Iris and the giant: Analysis report of Iris and the giant, a CCG rogue-lite game",
         "role": "Analizer",
-        "title": "Analysis",
-        "summary": "Document",
-        "description": "Analysis report of Iris and the giant"
+        "title": "Analysis report of Iris and the giant",
+        "summary": "Analysis report of Iris and the giant, a CCG rogue-lite game"
       },
       "zh": {
-        "ariaLabel": "Analysis: Document",
-        "role": "Analizer",
-        "title": "Analysis",
-        "summary": "Document",
-        "description": "Analysis report of Iris and the giant"
+        "ariaLabel": "《爱丽丝与巨人》拆解分析: 从玩法系统及UI交互层面对牌组构建式类肉鸽进行分析",
+        "role": "系统分析",
+        "title": "《爱丽丝与巨人》拆解分析",
+        "summary": "从玩法系统及UI交互层面对牌组构建式类肉鸽进行分析"
       }
     }
   ],

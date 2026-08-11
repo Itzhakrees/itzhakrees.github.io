@@ -38,7 +38,6 @@ order: 1
 title: "项目标题"
 role: "你的职责"
 summary: "首页项目卡片上的短摘要"
-description: "项目详情页简介"
 cover: "./img/cover.webp"
 visualClass: ""
 coverClass: ""
@@ -58,8 +57,7 @@ date: "2026-06-21"
 - `order`：项目排序编号，数字越小越靠前。
 - `title`：项目标题。
 - `role`：你在项目中的职责。
-- `summary`：首页项目卡片使用的简短摘要。
-- `description`：项目详情页及页面描述使用的内容。
+- `summary`：首页项目卡片、项目详情页简介及页面描述使用的简短摘要。
 - `cover`：项目封面路径，建议使用项目目录内的图片。
 - `tags`：项目类型或设计方向。
 - `filters`：首页筛选分类，可使用 `Game`、`White Box`、`Document`、`Other`，并可为同一项目填写多个分类。

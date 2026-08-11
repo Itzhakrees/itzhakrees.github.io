@@ -3,11 +3,10 @@ id: "MPC"
 lang: "zh"
 status: "published"
 featured: true
-order: 2
+order: 3
 title: "MPC"
 role: "玩法&关卡设计"
 summary: "道具改变敌人NPC行为玩法的走格子解谜游戏"
-description: "道具改变敌人NPC行为玩法的走格子解谜游戏"
 # Add a real project cover at ./img/cover.webp, then set cover to "./img/cover.webp".
 cover: "./img/cover.png"
 visualClass: "puzzle-card"

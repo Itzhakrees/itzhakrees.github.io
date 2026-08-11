@@ -3,11 +3,10 @@ id: "MPC"
 lang: "en"
 status: "published"
 featured: true
-order: 2
+order: 3
 title: "MPC"
 role: "Gameplay / Level design"
 summary: "TODO."
-description: "TODO."
 # Add a real project cover at ./img/cover.webp, then set cover to "./img/cover.webp".
 cover: "./img/cover.png"
 visualClass: "puzzle-card"

@@ -3,11 +3,10 @@ id: "IrisAndTheGiantAnalysis"
 lang: "zh"
 status: "published"
 featured: true
-order: 4
+order: 5
 title: "《爱丽丝与巨人》拆解分析"
 role: "系统分析"
 summary: "从玩法系统及UI交互层面对牌组构建式类肉鸽进行分析"
-description: "Analysis report of Iris and the giant"
 # Add a real project cover at ./img/cover.webp, then set cover to "./img/cover.webp".
 cover: "./img/Cover.jpg"
 visualClass: "level-card"

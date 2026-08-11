@@ -1,14 +1,12 @@
 ---
-
 id: "Slackoff"
 lang: "zh"
 status: "published"
 featured: true
-order: 3
+order: 4
 title: "Slack Off"
 role: "玩法设计"
 summary: "基于记忆玩法的摸鱼主题桌游"
-description: "基于记忆玩法的摸鱼主题桌游"
 # Add a real project cover at ./img/cover.webp, then set cover to "./img/cover.webp".
 cover: "./img/Cover.png"
 visualClass: "puzzle-card"
@@ -29,7 +27,6 @@ date: "2025-10-15"
 
 <img src="img/Pasted image 20260603141509.png" alt="Pasted image 20260603141509" style="zoom:80%;" />
 
----
 
 ## 2. 目标受众及竞品
 
@@ -47,7 +44,6 @@ date: "2025-10-15"
 - **策略制定**：玩家可以选择放置哪些行动卡，规划最优路线
 - **破坏（Sabotage）**：通过交换事件卡或行动卡干扰对手，增加互动性与紧张感
 
----
 
 ## 3. 核心组件
 
@@ -69,7 +65,6 @@ date: "2025-10-15"
 <img src="img/Pasted image 20260603143300.png" alt="Pasted image 20260603143300" style="zoom:50%;" />
 
 
----
 
 ## 4. 游戏流程
 
@@ -84,10 +79,6 @@ date: "2025-10-15"
 6. **游戏结束**：当所有玩家都拿到过一遍顺序flag后，游戏结束，统计玩家手中的token数，最多者胜利（可平局）。
 
 
-
-
----
-
 ## 5. 计分方式
 
 - 玩家行动卡的位置与同色事件卡同列，即为**未避开**事件，反之则是**避开**事件
@@ -97,7 +88,6 @@ date: "2025-10-15"
 
 <img src="img/Pasted image 20260603144842.png" alt="Pasted image 20260603144842" style="zoom:80%;" />
 
----
 
 ## 7. 测试方法与反馈
 
@@ -120,11 +110,10 @@ date: "2025-10-15"
 - 紧张感（Tension）
 - 破坏（Sabotage）
 
----
-
 ## 8. 迭代过程
 
-![Pasted image 20260603150133](img/Pasted image 20260603150133.png)
+<img src="img/Pasted image 20260603150133.png" alt="Pasted image 20260603150133" style="zoom:50%;" />
+
 ### 一阶段：内部构建
 
 - 确定概念
@@ -140,8 +129,6 @@ date: "2025-10-15"
 	- 增加顶风作案机制
 - 平衡调整
 
-
----
 
 ## 9. 未来工作（Future Work）
 
