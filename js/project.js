@@ -483,7 +483,7 @@ function renderProject(language) {
     projectTitle.textContent = dictionary.projectNotFound;
     projectSummary.textContent = "";
     projectArticle.textContent = dictionary.projectNotFound;
-    document.title = `${dictionary.projectNotFound} | Itzhak Rees`;
+    document.title = `${dictionary.projectNotFound} | Itzhakrees`;
     return;
   }
 
@@ -492,7 +492,7 @@ function renderProject(language) {
   projectRole.textContent = content.role;
   projectTitle.textContent = content.title;
   projectSummary.textContent = content.summary;
-  document.title = `${content.title} | Itzhak Rees`;
+  document.title = `${content.title} | Itzhakrees`;
   loadProjectArticle(project, language);
 }
 

@@ -268,7 +268,6 @@ async function collectProjects() {
 
 async function generateContentData(projects, siteData) {
   const generated = {
-    profile: siteData.profile || {},
     ui: siteData.ui || {},
     projects,
     research: siteData.research || {},
